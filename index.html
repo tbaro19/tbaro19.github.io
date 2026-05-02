@@ -14,14 +14,14 @@
         .card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .badge { @apply px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider; }
         .link-icon { @apply hover:text-blue-600 transition-colors flex items-center gap-1; }
-        .advisor-img { @apply w-14 h-14 rounded-2xl object-cover shadow-lg border-2 border-white; }
+        .advisor-avatar { @apply w-12 h-12 rounded-full object-cover shadow-sm border border-slate-200; }
     </style>
 </head>
 <body class="selection:bg-blue-100 selection:text-blue-900 leading-relaxed">
 
-    <div class="max-w-6xl mx-auto px-6 py-12 lg:py-24">
+    <div class="max-w-4xl mx-auto px-6 py-12 lg:py-24">
         <!-- Header Section -->
-        <header class="flex flex-col md:flex-row items-center md:items-start gap-12 mb-24">
+        <header class="flex flex-col md:flex-row items-center md:items-start gap-12 mb-16">
             <div class="w-56 h-56 flex-shrink-0">
                 <img src="./page_files/Bao.jpg" alt="Thai Bao Huynh" class="w-full h-full object-cover rounded-[2.5rem] shadow-2xl border-8 border-white ring-1 ring-slate-200" onerror="this.src='https://via.placeholder.com/224?text=Bao'">
             </div>
@@ -50,309 +50,249 @@
 
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
                     <p class="leading-relaxed text-slate-700 text-lg">
-                        I am an AI student at <a href="https://uit.edu.vn/" class="font-bold text-slate-900 hover:text-blue-600">UIT–VNUHCM</a> and a member of <a href="https://sites.google.com/view/evolve-learn-optimize/home" class="font-bold text-slate-900 hover:text-blue-600 underline decoration-blue-200 decoration-2 underline-offset-4">ELO Lab</a> & <a href="https://nlp.uit.edu.vn/home" class="font-bold text-slate-900 hover:text-blue-600 underline decoration-blue-200 decoration-2 underline-offset-4">NLP-UIT Group</a>. My research interests span <strong>Natural Language Processing</strong> (Segmentation-Free & Phonemic Modeling), <strong>Agentic AI</strong>, and <strong>Adversarial Robustness</strong> of foundation models.
+                        I am an AI student at <a href="https://cs.uit.edu.vn/" class="font-bold text-slate-900 hover:text-blue-600">Faculty of Computer Science</a>, <a href="https://uit.edu.vn/" class="font-bold text-slate-900 hover:text-blue-600">University of Information Technology–VNUHCM</a>. And also a member of the <strong>Evolutionary Learning & Optimization Laboratory (ELO Lab)</strong> and <strong>The UIT Natural Language Processing Group (NLP-UIT Group)</strong>. My research interests span <strong>Natural Language Processing</strong> (Segmentation-Free & Phonemic Modeling), <strong>Agentic AI</strong>, and <strong>Adversarial Robustness</strong> of foundation models.
                     </p>
                 </div>
             </div>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            <!-- Left Column -->
-            <div class="lg:col-span-5 space-y-20">
+        <!-- Main Content (Single Column) -->
+        <div class="space-y-20">
+            
+            <!-- News Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-10 section-title tracking-tight uppercase">News</h2>
+                <div class="space-y-12 relative border-l-2 border-slate-200 pl-8 ml-3">
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-blue-600 ring-4 ring-white shadow-md"></div>
+                        <p class="text-[10px] font-black text-blue-600 uppercase mb-2 tracking-widest">APR 2026</p>
+                        <p class="text-sm text-slate-700 font-medium italic">Joined <strong>The UIT Natural Language Processing Group</strong> as a Research Student, focusing on Segmentation-Free and Phonemic Language Modeling.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                        <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">NOV/DEC 2025</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">Our paper <strong>"FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning..."</strong> was accepted to <strong>SOICT 2025</strong> in Nha Trang, Vietnam.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                        <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">SEP 2025</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">Selected as 1 of 54 students nationwide to attend the <strong>SoICT Summer School – Agentic AI</strong>, organized by HUST.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                        <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">JUL 2025</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">Speaker at <strong>OpenInfra & Cloud Native Day Vietnam 2025</strong> (endorsed by MIC). Talk: <em>“ARM64 Meets AI: Benchmarking LLM Performance Across GH200, H100, and A100.”</em></p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                        <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">APR 2025</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">Honored speaker at <strong>HCMC AI Meetup #1 - Menlo Research</strong> hosted at VNG Campus. Talk: <em>“Training on NVIDIA GH200: Optimizing for ARM Architecture.”</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Advisors Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-10 section-title tracking-tight uppercase">Research Advisors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Advisor 1 -->
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card flex items-center gap-4">
+                        <img src="./page_files/Thay Hoang.jpg" alt="Ph.D. Ngoc Hoang Luong" class="advisor-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full items-center justify-center text-white font-black text-xl shadow-lg hidden">L</div>
+                        <div class="flex-grow">
+                            <h3 class="text-base font-bold text-slate-900">Ph.D. Ngoc Hoang Luong</h3>
+                            <p class="text-[10px] font-black text-blue-600 uppercase mb-1">Head of AI Dept, CS Faculty @ UIT</p>
+                            <a href="mailto:hoangln@uit.edu.vn" class="text-xs font-bold text-slate-500 hover:text-blue-600 transition flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                hoangln@uit.edu.vn
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Advisor 2 -->
+                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card flex items-center gap-4">
+                        <img src="./page_files/Anh Nghia.jpg" alt="M.Sc. Nghia Hieu Nguyen" class="advisor-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full items-center justify-center text-white font-black text-xl shadow-lg hidden">N</div>
+                        <div class="flex-grow">
+                            <h3 class="text-base font-bold text-slate-900">M.Sc. Nghia Hieu Nguyen</h3>
+                            <p class="text-[10px] font-black text-slate-600 uppercase mb-1">Lecturer, FISE Faculty @ UIT</p>
+                            <a href="mailto:nghiangh@uit.edu.vn" class="text-xs font-bold text-slate-500 hover:text-blue-600 transition flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                nghiangh@uit.edu.vn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rewards Section -->
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-10 section-title tracking-tight uppercase">Rewards</h2>
+                <div class="space-y-4">
+                    <div class="p-5 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl card flex flex-col gap-2">
+                        <div class="flex justify-between items-start text-sm">
+                            <span class="font-bold text-slate-800">🏆 1st Champion xAI Hackathon 2025 @ IJCNN</span>
+                            <a href="https://drive.google.com/file/d/1TOlDG2_hmkwgo1cuL1x9b12iLzxkyoXI/view?usp=sharing" target="_blank" class="text-[10px] font-black text-amber-600 underline uppercase">Certificate</a>
+                        </div>
+                    </div>
+                    <div class="p-5 bg-blue-50 border-l-4 border-blue-500 rounded-r-2xl card flex flex-col gap-2">
+                        <div class="flex justify-between items-start text-sm">
+                            <span class="font-bold text-slate-800">🥇 1st Champion ROOMELSA @ SHREC 2025</span>
+                            <div class="flex gap-3">
+                                <a href="https://drive.google.com/file/d/16fKckGoNOe0zw4X1N_g6kb7QMSSYc0HF/view" target="_blank" class="text-[10px] font-black text-blue-600 underline">PERS</a>
+                                <a href="https://drive.google.com/file/d/1THOPAxyUMxaG3SZ0Su5lzRgAPV4Pgj5Z/view" target="_blank" class="text-[10px] font-black text-blue-600 underline text-blue-800">TEAM</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 bg-slate-50 border-l-4 border-slate-600 rounded-r-2xl card flex flex-col gap-2 text-sm">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-slate-600">🥈 2nd Prize EVENTA @ ACM Multimedia 2025</span>
+                            <a href="https://drive.google.com/file/d/1UqNPW0Igu9i0fCVPg61R0EYcBElwFLeB/view" target="_blank" class="text-[10px] font-black text-slate-400 underline">Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Publications</h2>
+                <div class="space-y-12">
+                    <!-- ROOMELSA -->
+                    <div class="card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-black text-slate-900 leading-tight">ROOMELSA: Retrieval of Optimal Objects for Multi-modal Enhanced Language and Spatial Assistance</h4>
+                            <span class="flex-shrink-0 px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-black uppercase">Computers & Graphics (Q2)</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mb-6 italic leading-relaxed">Trong-Thuan Nguyen, Viet-Tham Huynh, ..., <strong>Bao Huynh Thai</strong>, ..., Minh-Triet Tran.</p>
+                        <div class="flex gap-6 pt-4 border-t border-slate-100 font-bold text-sm">
+                            <a href="https://doi.org/10.1016/j.cag.2025.104400" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Paper</a>
+                            <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>Code</a>
+                        </div>
+                    </div>
+                    <!-- OCR Paper -->
+                    <div class="card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-black text-slate-900 leading-tight">Adversarial Robustness Evaluation of a Vietnamese Handwriting OCR System</h4>
+                            <span class="flex-shrink-0 px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-black uppercase">MAPR 2025</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mb-6 italic leading-relaxed"><strong>Thai Bao Huynh</strong>, Quan Minh Phan, Viet-Hang Duong, Ngoc Hoang Luong.</p>
+                        <div class="flex gap-6 pt-4 border-t border-slate-100 font-bold text-sm">
+                            <a href="https://ieeexplore.ieee.org/document/11133909" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Paper</a>
+                            <a href="https://github.com/tbaro19/AdvRE-ViHandOCR/" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>Code</a>
+                        </div>
+                    </div>
+                    <!-- FRED Paper -->
+                    <div class="card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-black text-slate-900 leading-tight">FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning with Semantic Query Expansion and Exclusionary Search</h4>
+                            <span class="flex-shrink-0 px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-black uppercase">SOICT 2025</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mb-6 italic leading-relaxed italic">Nhat-Trung Nguyen-Tran, <strong>Thai Bao Huynh</strong>, Hai-Dang Pham, Hieu Thien Vu, Y-Nhi Duong-Thai, and Thang Cap Pham Dinh.</p>
+                        <div class="flex gap-6 pt-4 border-t border-slate-100 font-bold text-sm">
+                            <a href="https://drive.google.com/file/d/1cGmfAyafAhhy1pxQh8UtRjO7GgOn775o/view?usp=sharing" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Paper</a>
+                            <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>Code</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Projects</h2>
                 
-                <!-- Research Advisors -->
-                <section>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-10 section-title tracking-tight uppercase">Research Advisors</h2>
-                    <div class="space-y-6">
-                        <!-- Advisor 1 -->
-                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card">
-                            <div class="flex items-start gap-4">
-                                <img src="./page_files/Thay Hoang.jpg" alt="Ph.D. Ngoc Hoang Luong" class="advisor-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="w-14 h-14 bg-blue-600 rounded-2xl items-center justify-center text-white font-black text-2xl shadow-lg hidden">L</div>
-                                <div class="flex-grow">
-                                    <h3 class="text-lg font-bold text-slate-900">Ph.D. Ngoc Hoang Luong</h3>
-                                    <p class="text-[11px] font-black text-blue-600 uppercase mb-2">Head of the Department of Artificial Intelligence</p>
-                                    <p class="text-xs text-slate-500 leading-snug mb-3 font-medium">Faculty of Computer Science, University of Information Technology, VNUHCM</p>
-                                    <a href="mailto:hoangln@uit.edu.vn" class="text-xs font-bold text-slate-900 flex items-center gap-1.5 hover:text-blue-600 transition">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                        hoangln@uit.edu.vn
-                                    </a>
-                                </div>
-                            </div>
+                <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-8">Personal Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div class="p-8 bg-slate-900 rounded-3xl text-white shadow-xl card border-none">
+                        <h4 class="font-bold text-lg mb-3 flex items-center justify-between text-blue-400">ICAT <a href="https://github.com/tbaro19/ICAT" target="_blank" class="text-white hover:text-blue-400 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></h4>
+                        <p class="text-[11px] text-slate-400 leading-relaxed mb-4">Autonomous evolutionary framework evolving 16D latent strategies to evaluate VLM safety robustness.</p>
+                        <span class="badge bg-blue-900 text-blue-200">Ongoing Research</span>
+                    </div>
+                    <div class="p-8 bg-white border border-slate-200 rounded-3xl shadow-sm card">
+                        <h4 class="font-bold text-slate-900 text-lg mb-3 flex items-center justify-between underline decoration-blue-100">AdvRE-ViHandOCR <a href="https://github.com/tbaro19/AdvRE-ViHandOCR" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></h4>
+                        <p class="text-[11px] text-slate-600 leading-relaxed italic italic">Robustness evaluation of Vietnamese handwriting OCR models against PGD white-box attacks.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-8">Team Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm hover:border-blue-500 transition card">
+                        <h4 class="font-bold text-slate-900 mb-2 underline decoration-blue-100 decoration-4">xAI-for-edu</h4>
+                        <p class="text-xs text-slate-500 mb-4 leading-relaxed">Winner solution of IJCNN 2025. Developed neuro-symbolic explainable components for QA systems.</p>
+                        <a href="https://github.com/tbaro19/XAI-4-Edu" target="_blank" class="text-[10px] text-blue-600 underline uppercase font-bold">Repository</a>
+                    </div>
+                    <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm hover:border-blue-500 transition card">
+                        <h4 class="font-bold text-slate-900 mb-2">3D-Objects-Retrieval</h4>
+                        <p class="text-xs text-slate-500 mb-4 leading-relaxed">System for 3D model retrieval via natural language and spatial context (SHREC 2025 Winner).</p>
+                        <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" class="text-[10px] text-blue-600 underline uppercase font-bold">Repository</a>
+                    </div>
+                    <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm border-blue-100 hover:border-blue-500 transition card">
+                        <h4 class="font-bold text-blue-600 mb-2 underline">FRED</h4>
+                        <p class="text-xs text-slate-500 mb-4 leading-relaxed italic">Video retrieval system for AI Challenge HCMC 2025. Core multimodal fusion module.</p>
+                        <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" class="text-[10px] text-blue-600 underline uppercase font-bold">Repository</a>
+                    </div>
+                    <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm hover:border-blue-500 transition card">
+                        <h4 class="font-bold text-slate-900 mb-2">VNOID</h4>
+                        <p class="text-xs text-slate-500 mb-4 leading-relaxed italic">Scripts to benchmark LLM throughput/latency using the vLLM framework.</p>
+                        <a href="https://github.com/tbaro19/VNOID" target="_blank" class="text-[10px] text-blue-600 underline uppercase font-bold">Repository</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media Section -->
+            <section>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Presentations</h2>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row gap-6 p-8 bg-blue-900 rounded-[2.5rem] text-white card border-none shadow-2xl">
+                        <div class="flex-shrink-0 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20">
+                            <svg class="w-8 h-8 text-blue-300" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09s-.03 1.29-.1 2.09c-.06.8-.15 1.43-.28 1.9-.17.6-.44 1.05-.83 1.35-.38.3-.87.48-1.45.54-1.25.13-3.12.2-5.65.2s-4.4-.07-5.65-.2c-.58-.06-1.07-.24-1.45-.54-.39-.3-.66-.75-.83-1.35-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09s.03-1.29.1-2.09c.06-.8.15-1.43.28-1.9.17-.6.44-1.05.83-1.35.38-.3.87-.48 1.45-.54 1.25-.13 3.12-.2 5.65-.2s4.4.07 5.65.2c.58.06 1.07.24 1.45.54.39.3.66.75.83 1.35z"/></svg>
                         </div>
-                        <!-- Advisor 2 -->
-                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card">
-                            <div class="flex items-start gap-4">
-                                <img src="./page_files/Anh Nghia.jpg" alt="M.Sc. Nghia Hieu Nguyen" class="advisor-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="w-14 h-14 bg-slate-800 rounded-2xl items-center justify-center text-white font-black text-2xl shadow-lg hidden">N</div>
-                                <div class="flex-grow">
-                                    <h3 class="text-lg font-bold text-slate-900">M.Sc. Nghia Hieu Nguyen</h3>
-                                    <p class="text-[11px] font-black text-slate-600 uppercase mb-2">Lecturer</p>
-                                    <p class="text-xs text-slate-500 leading-snug mb-3 font-medium">Faculty of Information Science and Engineering, University of Information Technology, VNUHCM</p>
-                                    <a href="mailto:nghiangh@uit.edu.vn" class="text-xs font-bold text-slate-900 flex items-center gap-1.5 hover:text-blue-600 transition">
-                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                        nghiangh@uit.edu.vn
-                                    </a>
-                                </div>
+                        <div class="flex-grow">
+                            <h4 class="font-black text-sm uppercase tracking-widest text-blue-400 mb-1 font-black underline underline-offset-4">HCMC AI Meetup #1</h4>
+                            <p class="text-xs text-slate-400 italic italic">"Training on NVIDIA GH200: Optimizing for ARM Architecture"</p>
+                            <a href="https://www.youtube.com/watch?v=lKEEYsIdD00&list=PLNSN4JN7YteXwE-aToHCjpNNaf6cjOFo_" target="_blank" class="mt-4 inline-block px-6 py-2 bg-red-600 rounded-xl text-[10px] font-black uppercase shadow-lg text-center">Watch Recording</a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-6 p-8 bg-white border border-slate-200 rounded-[2.5rem] card shadow-sm">
+                        <div class="flex-shrink-0 w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center border border-slate-200">
+                            <svg class="w-8 h-8 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM11 16H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-black text-sm uppercase tracking-widest text-slate-900 mb-1 font-black">OpenInfra Day Vietnam 2025</h4>
+                            <p class="text-xs text-slate-400 italic font-bold">"Benchmarking LLMs on ARM64 Architecture"</p>
+                            <div class="flex gap-2 mt-4">
+                                <a href="https://youtu.be/4ZRzjk8cHSE" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 text-[10px] font-bold text-white transition-all">Video</a>
+                                <a href="https://drive.google.com/file/d/1Uu7GmHWRlECg74ziJHs1My1uQApdQZgY/view" target="_blank" class="btn-link">Slides</a>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Full Detailed News -->
-                <section>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-10 section-title tracking-tight uppercase">News</h2>
-                    <div class="space-y-12 relative border-l-2 border-slate-200 pl-8 ml-3">
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-blue-600 ring-4 ring-white shadow-md"></div>
-                            <p class="text-[10px] font-black text-blue-600 uppercase mb-2 tracking-widest">APR 2026</p>
-                            <p class="text-sm text-slate-700 font-medium italic">Joined <strong>The UIT Natural Language Processing Group</strong> as a Research Student, focusing on Segmentation-Free and Phonemic Language Modeling.</p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">NOV/DEC 2025</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">Our paper <strong>"FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning..."</strong> was accepted to <strong>SOICT 2025</strong> in Nha Trang, Vietnam.</p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">SEP 2025</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">Selected as 1 of 54 students nationwide to attend <strong>SoICT Summer School – Agentic AI</strong>, organized by HUST.</p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">JUL 2025</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">Speaker at <strong>OpenInfra & Cloud Native Day Vietnam 2025</strong> (endorsed by MIC). Talk: <em>“ARM64 Meets AI: Benchmarking LLM Performance Across GH200, H100, and A100.”</em></p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                            <p class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest">APR 2025</p>
-                            <p class="text-sm text-slate-700 leading-relaxed">Honored speaker at <strong>HCMC AI Meetup #1 - Menlo Research</strong> hosted at VNG Campus. Talk: <em>“Training on NVIDIA GH200: Optimizing for ARM Architecture.”</em></p>
-                        </div>
+            <!-- Social Section -->
+            <section>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Social Activities</h2>
+                <div class="space-y-6 text-sm">
+                    <div class="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 card">
+                        <p class="font-bold text-slate-900 mb-2">Mentor of <a href="https://www.facebook.com/sciencelab.stem" class="text-blue-600 underline decoration-blue-100">Science Lab</a>'s Programs</p>
+                        <p class="text-xs text-slate-500 leading-relaxed italic italic">Narrowing the STEM gap for 150+ local high school students in Dak Lak through hackathons and research mentoring: ELECTRAHACK 2023, SIP 2024, ICOHACK 2024, SOFTHACK 2025.</p>
                     </div>
-                </section>
-
-                <!-- Rewards Section -->
-                <section>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-10 section-title tracking-tight uppercase">Rewards</h2>
-                    <div class="space-y-4">
-                        <!-- xAI -->
-                        <div class="p-5 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl card flex flex-col gap-2">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <p class="text-[10px] font-black text-amber-700 uppercase">1st Champion</p>
-                                    <p class="text-sm font-bold text-slate-800">xAI Hackathon 2025: Explainable AI @ IJCNN</p>
-                                </div>
-                                <a href="https://drive.google.com/file/d/1TOlDG2_hmkwgo1cuL1x9b12iLzxkyoXI/view?usp=sharing" target="_blank" class="text-[10px] font-bold text-amber-600 underline">Certificate</a>
-                            </div>
-                        </div>
-                        <!-- ROOMELSA -->
-                        <div class="p-5 bg-blue-50 border-l-4 border-blue-500 rounded-r-2xl card flex flex-col gap-2">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <p class="text-[10px] font-black text-blue-700 uppercase">1st Champion</p>
-                                    <p class="text-sm font-bold text-slate-800">ROOMELSA @ SHREC Challenge 2025</p>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="https://drive.google.com/file/d/16fKckGoNOe0zw4X1N_g6kb7QMSSYc0HF/view?usp=drive_link" target="_blank" class="text-[10px] font-bold text-blue-600 underline">Personal Cert</a>
-                                    <a href="https://drive.google.com/file/d/1THOPAxyUMxaG3SZ0Su5lzRgAPV4Pgj5Z/view?usp=drive_link" target="_blank" class="text-[10px] font-bold text-blue-600 underline">Team Cert</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- EVENTA -->
-                        <div class="p-5 bg-slate-50 border-l-4 border-slate-600 rounded-r-2xl card flex flex-col gap-2">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <p class="text-[10px] font-black text-slate-600 uppercase">2nd Prize</p>
-                                    <p class="text-sm font-bold text-slate-800">EVENTA 2025 Grand Challenge @ ACM Multimedia</p>
-                                </div>
-                                <a href="https://drive.google.com/file/d/1UqNPW0Igu9i0fCVPg61R0EYcBElwFLeB/view?usp=drive_link" target="_blank" class="text-[10px] font-bold text-slate-600 underline">Certificate</a>
-                            </div>
-                        </div>
-                        <!-- AI Olympiad -->
-                        <div class="p-5 bg-slate-50 border-l-4 border-slate-400 rounded-r-2xl card flex flex-col gap-2">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <p class="text-[10px] font-black text-slate-500 uppercase">3rd Prize</p>
-                                    <p class="text-sm font-bold text-slate-800 uppercase">Olympiad AI HCMC 2025</p>
-                                </div>
-                                <a href="https://drive.google.com/file/d/1NU4qc9D9U_QSv7FTuixApeBqfxJ4hOir/view?usp=drive_link" target="_blank" class="text-[10px] font-bold text-slate-500 underline">Certificate</a>
-                            </div>
-                        </div>
-                        <!-- Science Fair -->
-                        <div class="p-5 bg-slate-50 border-l-4 border-slate-300 rounded-r-2xl card flex flex-col gap-2">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <p class="text-[10px] font-black text-slate-400 uppercase">4th Prize</p>
-                                    <p class="text-sm font-bold text-slate-800">Vietnam Science & Engineering Fair 2023</p>
-                                </div>
-                                <a href="https://drive.google.com/file/d/1ZkzIwacse7GyL3b3BCM5jFfHAdiIWGC8/view?usp=drive_link" target="_blank" class="text-[10px] font-bold text-slate-400 underline">Certificate</a>
-                            </div>
-                        </div>
+                    <div class="p-6 bg-white border border-slate-200 rounded-[2rem] flex items-center justify-between card">
+                        <span class="font-bold text-slate-900">SoICT Summer School 2025: Agentic AI</span>
+                        <a href="https://drive.google.com/file/d/1ONGvp09UvMrAylbmzCrr6JBvkAxe2MXl/view?usp=drive_link" target="_blank" class="text-[10px] font-bold text-blue-600 underline uppercase">Certificate</a>
                     </div>
-                </section>
-            </div>
-
-            <!-- Right Column: Publications & Categorized Projects -->
-            <div class="lg:col-span-7 space-y-20">
-                
-                <!-- Publications -->
-                <section>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Publications</h2>
-                    <div class="space-y-12">
-                        <!-- Journal -->
-                        <div class="card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
-                            <div class="flex justify-between items-start mb-4">
-                                <h4 class="text-xl font-black text-slate-900 leading-tight">ROOMELSA: Retrieval of Optimal Objects for Multi-modal Enhanced Language and Spatial Assistance</h4>
-                                <span class="flex-shrink-0 px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-[10px] font-black uppercase">Computers & Graphics (Q2)</span>
-                            </div>
-                            <p class="text-xs text-slate-600 mb-6 italic leading-relaxed">Trong-Thuan Nguyen, Viet-Tham Huynh, Quang-Thuc Nguyen, Hoang-Phuc Nguyen, Long Le Bao, Thai Hoang Minh, Minh Nguyen Anh, Thang Nguyen Tien, Phat Nguyen Thuan, Huy Nguyen Phong, <strong>Bao Huynh Thai</strong>, Vinh-Tiep Nguyen, Duc-Vu Nguyen, Phu-Hoa Pham, Minh-Huy Le-Hoang, Nguyen-Khang Le, Minh-Chinh Nguyen, Minh-Quan Ho, Ngoc-Long Tran, Hien-Long Le-Hoang, Man-Khoi Tran, Anh-Duong Tran, Kim Nguyen, Quan Nguyen Hung, Dat Phan Thanh, Hoang Tran Van, Tien Huynh Viet, Nhan Nguyen Viet Thien, Dinh-Khoi Vo, Van-Loc Nguyen, Trung-Nghia Le, Tam V. Nguyen, Minh-Triet Tran.</p>
-                            <div class="flex gap-6 pt-4 border-t border-slate-100 font-bold text-sm">
-                                <a href="https://doi.org/10.1016/j.cag.2025.104400" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Paper</a>
-                                <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>Code</a>
-                            </div>
-                        </div>
-
-                        <!-- Conference Papers - Rebuilt to match Journal template -->
-                        <div class="grid grid-cols-1 gap-12">
-                            <!-- OCR Paper -->
-                            <div class="card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
-                                <div class="flex justify-between items-start mb-4">
-                                    <h4 class="text-xl font-black text-slate-900 leading-tight">Adversarial Robustness Evaluation of a Vietnamese Handwriting OCR System</h4>
-                                    <span class="flex-shrink-0 px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-black uppercase">MAPR 2025</span>
-                                </div>
-                                <p class="text-xs text-slate-600 mb-6 italic leading-relaxed">
-                                    <strong>Thai Bao Huynh</strong>, Quan Minh Phan, Viet-Hang Duong, Ngoc Hoang Luong.
-                                </p>
-                                <div class="flex gap-6 pt-4 border-t border-slate-100 font-bold text-sm">
-                                    <a href="https://ieeexplore.ieee.org/document/11133909" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Paper</a>
-                                    <a href="https://github.com/tbaro19/AdvRE-ViHandOCR/" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>Code</a>
-                                </div>
-                            </div>
-                            <!-- FRED Paper -->
-                            <div class="card bg-white p-8 rounded-[2rem] border border-slate-200 shadow-sm">
-                                <div class="flex justify-between items-start mb-4">
-                                    <h4 class="text-xl font-black text-slate-900 leading-tight">FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning with Semantic Query Expansion and Exclusionary Search</h4>
-                                    <span class="flex-shrink-0 px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-black uppercase">SOICT 2025</span>
-                                </div>
-                                <p class="text-xs text-slate-600 mb-6 italic leading-relaxed">
-                                    Nhat-Trung Nguyen-Tran, <strong>Thai Bao Huynh</strong>, Hai-Dang Pham, Hieu Thien Vu, Y-Nhi Duong-Thai, and Thang Cap Pham Dinh.
-                                </p>
-                                <div class="flex gap-6 pt-4 border-t border-slate-100 font-bold text-sm">
-                                    <a href="https://drive.google.com/file/d/1cGmfAyafAhhy1pxQh8UtRjO7GgOn775o/view?usp=sharing" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Paper</a>
-                                    <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" class="link-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>Code</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Categorized Projects -->
-                <section>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Projects</h2>
-                    
-                    <!-- Personal -->
-                    <div class="mb-12">
-                        <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Personal Projects</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-6 bg-slate-900 rounded-3xl text-white shadow-xl card">
-                                <h4 class="font-bold text-lg mb-3 flex items-center justify-between">ICAT <a href="https://github.com/tbaro19/ICAT" target="_blank" class="text-blue-400"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></h4>
-                                <p class="text-[11px] text-slate-400 leading-relaxed mb-4">Autonomous evolutionary framework evolving 16D latent strategies to evaluate VLM safety.</p>
-                                <span class="badge bg-blue-900 text-blue-200">Ongoing Research</span>
-                            </div>
-                            <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm card">
-                                <h4 class="font-bold text-slate-900 text-lg mb-3 flex items-center justify-between underline decoration-blue-100">AdvRE-ViHandOCR <a href="https://github.com/tbaro19/AdvRE-ViHandOCR" target="_blank" class="text-slate-400"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></h4>
-                                <p class="text-[11px] text-slate-600 leading-relaxed italic">Robustness evaluation of handwriting OCR models against PGD white-box attacks.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team -->
-                    <div>
-                        <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Team Projects</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm font-medium">
-                            <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm hover:border-blue-500 transition card">
-                                <h4 class="font-bold text-slate-900 mb-2">xAI-for-edu</h4>
-                                <p class="text-xs text-slate-500 mb-4 leading-relaxed">Winner solution of IJCNN 2025. Developed neuro-symbolic explainable components.</p>
-                                <a href="https://github.com/tbaro19/XAI-4-Edu" target="_blank" class="text-[10px] text-blue-600 underline">Repository</a>
-                            </div>
-                            <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm hover:border-blue-500 transition card">
-                                <h4 class="font-bold text-slate-900 mb-2">3D-Objects-Retrieval</h4>
-                                <p class="text-xs text-slate-500 mb-4 leading-relaxed">System for 3D model retrieval via natural language and spatial context (SHREC 2025).</p>
-                                <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" class="text-[10px] text-blue-600 underline">Repository</a>
-                            </div>
-                            <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm border-blue-100 hover:border-blue-500 transition card">
-                                <h4 class="font-bold text-blue-600 mb-2">FRED</h4>
-                                <p class="text-xs text-slate-500 mb-4 leading-relaxed italic">Video retrieval system for AI Challenge HCMC 2025. Core multimodal fusion module.</p>
-                                <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" class="text-[10px] text-blue-600 underline">Repository</a>
-                            </div>
-                            <div class="p-6 bg-white border border-slate-200 rounded-3xl shadow-sm hover:border-blue-500 transition card">
-                                <h4 class="font-bold text-slate-900 mb-2">VNOID</h4>
-                                <p class="text-xs text-slate-500 mb-4 leading-relaxed">Scripts to benchmark LLM throughput/latency using the vLLM framework.</p>
-                                <a href="https://github.com/tbaro19/VNOID" target="_blank" class="text-[10px] text-blue-600 underline">Repository</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Media & Presentations Section -->
-                <section>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Presentations</h2>
-                    <div class="space-y-6">
-                        <div class="flex flex-col md:flex-row gap-6 p-6 bg-blue-900 rounded-[2.5rem] text-white card shadow-2xl">
-                            <div class="flex-shrink-0 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20">
-                                <svg class="w-8 h-8 text-blue-300" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09s-.03 1.29-.1 2.09c-.06.8-.15 1.43-.28 1.9-.17.6-.44 1.05-.83 1.35-.38.3-.87.48-1.45.54-1.25.13-3.12.2-5.65.2s-4.4-.07-5.65-.2c-.58-.06-1.07-.24-1.45-.54-.39-.3-.66-.75-.83-1.35-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09s.03-1.29.1-2.09c.06-.8.15-1.43.28-1.9.17-.6.44-1.05.83-1.35.38-.3.87-.48 1.45-.54 1.25-.13 3.12-.2 5.65-.2s4.4.07 5.65.2c.58.06 1.07.24 1.45.54.39.3.66.75.83 1.35z"/></svg>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="font-black text-sm uppercase tracking-wider mb-1">HCMC AI Meetup #1 - Menlo Research</h4>
-                                <p class="text-xs text-blue-200 mb-4 font-medium italic">"Training on NVIDIA GH200: Optimizing for ARM Architecture"</p>
-                                <a href="https://www.youtube.com/watch?v=lKEEYsIdD00&list=PLNSN4JN7YteXwE-aToHCjpNNaf6cjOFo_" target="_blank" class="inline-block px-4 py-1.5 bg-blue-600 rounded-lg text-[10px] font-black uppercase shadow-lg">Watch Recording</a>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row gap-6 p-6 bg-white border border-slate-200 rounded-[2.5rem] card shadow-sm">
-                            <div class="flex-shrink-0 w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center border border-slate-200">
-                                <svg class="w-8 h-8 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM11 16H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                            </div>
-                            <div class="flex-grow">
-                                <h4 class="font-black text-sm uppercase tracking-wider mb-1 text-slate-900">OpenInfra Day Vietnam 2025</h4>
-                                <p class="text-xs text-slate-400 mb-4 font-medium italic">"ARM64 Meets AI: Benchmarking LLMs on GH200, H100, A100"</p>
-                                <div class="flex gap-2">
-                                    <a href="https://youtu.be/4ZRzjk8cHSE?si=vFnIsC_ps5bI2AU4" target="_blank" class="px-4 py-1.5 bg-slate-900 text-white rounded-lg text-[10px] font-black uppercase">Video</a>
-                                    <a href="https://drive.google.com/file/d/1Uu7GmHWRlECg74ziJHs1My1uQApdQZgY/view?usp=drive_link" target="_blank" class="px-4 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-[10px] font-black uppercase border border-slate-200">Slides</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Others Section (Social Activities) -->
-                <section>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-10 section-title tracking-tight uppercase">Social Activities</h2>
-                    <div class="space-y-6 text-sm">
-                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
-                            <p class="font-bold text-slate-900 mb-2">Mentor of <a href="https://www.facebook.com/sciencelab.stem" class="text-blue-600 underline">Science Lab</a>'s Programs</p>
-                            <p class="text-xs text-slate-500 leading-relaxed mb-4 italic">Narrowing the STEM gap for 150+ high school students in Dak Lak through hackathons and research mentoring: ELECTRAHACK 2023, SIP 2024, ICOHACK 2024, SOFTHACK 2025.</p>
-                        </div>
-                        <div class="p-6 bg-white border border-slate-200 rounded-3xl flex items-center justify-between">
-                            <span class="font-bold text-slate-900">SoICT Summer School 2025: Agentic AI</span>
-                            <a href="https://drive.google.com/file/d/1ONGvp09UvMrAylbmzCrr6JBvkAxe2MXl/view?usp=drive_link" target="_blank" class="text-[10px] font-bold text-blue-600 underline uppercase">Certificate</a>
-                        </div>
-                    </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
 
         <!-- Footer -->
-        <footer class="mt-40 pt-16 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-10">
-            <div class="text-center md:text-left">
-                <p class="text-xl font-black text-slate-900 mb-1 tracking-tight italic uppercase">Thai Bao Huynh</p>
-                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">© 2026 • AI Research Student @ UIT</p>
-            </div>
-            <div class="flex gap-10 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                <a href="https://github.com/tbaro19/" class="hover:text-blue-600 transition">GitHub</a>
+        <footer class="mt-40 pt-16 border-t border-slate-100 flex flex-col items-center">
+            <div class="flex gap-10 text-[10px] font-black text-slate-400 uppercase tracking-widest mb-10">
+                <a href="https://github.com/tbaro19/" class="hover:text-blue-600 transition underline decoration-blue-50">GitHub</a>
                 <a href="https://scholar.google.com/citations?user=JlHZAl4AAAAJ&hl=vi" class="hover:text-blue-600 transition">Scholar</a>
-                <a href="https://uit.edu.vn/" class="hover:text-blue-600 transition">UIT</a>
+                <a href="https://uit.edu.vn/" class="hover:text-blue-600 transition">University</a>
             </div>
+            <p class="text-[9px] text-slate-300 font-bold uppercase italic tracking-[0.3em]">Thai Bao Huynh © 2026 • Research Student</p>
         </footer>
+
     </div>
 
 </body>
