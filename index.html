@@ -6,14 +6,102 @@
     <title>Thai Bao Huynh - AI Student @ UIT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #fcfcfd; 
+            color: #1e293b; 
+            margin: 0;
+            padding: 0;
+        }
+        .section-title { 
+            position: relative; 
+            display: inline-block; 
+            padding-bottom: 8px; 
+        }
+        .section-title::after { 
+            content: ''; 
+            position: absolute; 
+            width: 48px; 
+            height: 4px; 
+            background: #2563eb; 
+            bottom: 0; 
+            left: 0; 
+            border-radius: 2px; 
+        }
+        .card { 
+            transition: transform 0.2s ease, box-shadow 0.2s ease; 
+        }
+        .card:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 16px 24px -6px rgba(0, 0, 0, 0.08); 
+        }
+        /* Cố định kích thước ảnh avatar các Advisor */
+        .advisor-avatar {
+            width: 56px !important;
+            height: 56px !important;
+            min-width: 56px !important;
+            min-height: 56px !important;
+            max-width: 56px !important;
+            max-height: 56px !important;
+            border-radius: 9999px !important;
+            object-fit: cover !important;
+            object-position: top center !important;
+            flex-shrink: 0 !important;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+        .badge { 
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .link-icon { 
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.15s;
+        }
+        .link-icon:hover { 
+            color: #1d4ed8; 
+        }
+        .btn-link { 
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            font-size: 11px;
+            font-weight: 700;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-link:hover { 
+            background-color: #2563eb; 
+            color: #ffffff; 
+            border-color: #2563eb; 
+        }
+    </style>
 </head>
-<body class="selection:bg-blue-100 selection:text-blue-900 leading-relaxed">
+<body class="selection:bg-blue-100 selection:text-blue-900 leading-relaxed min-h-screen">
 
-    <div class="w-full">
+    <!-- Container trung tâm: Tự động căn giữa màn hình nhờ mx-auto -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 lg:py-16">
+        
         <!-- Header Section -->
         <header class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-12 md:mb-16">
-            <div class="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 flex-shrink-0">
+            <div class="w-44 h-44 sm:w-52 sm:h-52 flex-shrink-0">
                 <img src="./page_files/Bao.jpg" alt="Thai Bao Huynh" class="w-full h-full object-cover rounded-3xl md:rounded-[2.5rem] shadow-xl border-4 md:border-8 border-white ring-1 ring-slate-200" onerror="this.src='https://via.placeholder.com/224?text=Bao'">
             </div>
             <div class="text-center md:text-left flex-grow">
@@ -50,7 +138,7 @@
             </div>
         </header>
 
-        <!-- Main Content -->
+        <!-- Main Content Sections -->
         <div class="space-y-12 md:space-y-16">
             
             <!-- News Section -->
