@@ -1,414 +1,815 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Thai Bao Huynh - AI Student @ UIT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #fcfcfd; 
-            color: #1e293b; 
-            margin: 0;
-            padding: 0;
-        }
-        .section-title { 
-            position: relative; 
-            display: inline-block; 
-            padding-bottom: 8px; 
-        }
-        .section-title::after { 
-            content: ''; 
-            position: absolute; 
-            width: 48px; 
-            height: 4px; 
-            background: #2563eb; 
-            bottom: 0; 
-            left: 0; 
-            border-radius: 2px; 
-        }
-        .card { 
-            transition: transform 0.2s ease, box-shadow 0.2s ease; 
-        }
-        .card:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 16px 24px -6px rgba(0, 0, 0, 0.08); 
-        }
-        /* Cố định kích thước ảnh avatar các Advisor */
-        .advisor-avatar {
-            width: 56px !important;
-            height: 56px !important;
-            min-width: 56px !important;
-            min-height: 56px !important;
-            max-width: 56px !important;
-            max-height: 56px !important;
-            border-radius: 9999px !important;
-            object-fit: cover !important;
-            object-position: top center !important;
-            flex-shrink: 0 !important;
-            border: 2px solid #e2e8f0;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-            display: block;
-        }
-        .badge { 
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 9999px;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .link-icon { 
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            color: #2563eb;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            transition: color 0.15s;
-        }
-        .link-icon:hover { 
-            color: #1d4ed8; 
-        }
-        .btn-link { 
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            border-radius: 8px;
-            background-color: #f8fafc;
-            font-size: 11px;
-            font-weight: 700;
-            color: #475569;
-            border: 1px solid #e2e8f0;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .btn-link:hover { 
-            background-color: #2563eb; 
-            color: #ffffff; 
-            border-color: #2563eb; 
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Thai Bao Huynh | AI Research Student · UIT–VNUHCM</title>
+  <meta name="description" content="Academic homepage of Thai Bao Huynh (Huỳnh Thái Bảo), AI Research Student at Faculty of Computer Science, University of Information Technology (UIT-VNUHCM) and Research Assistant at AISIA Lab.">
+  <meta name="keywords" content="Thai Bao Huynh, Huỳnh Thái Bảo, UIT, VNU-HCM, AISIA Lab, NLP-UIT, PhonemicBERT, Natural Language Processing, AI Research">
+  <link rel="icon" type="image/png" href="page_files/Hu%E1%BB%B3nh%20Th%C3%A1i%20B%E1%BA%A3o.jpg">
+
+  <!-- Google Fonts: Inter & JetBrains Mono (Pure Minimalist Typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Design System -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="selection:bg-blue-100 selection:text-blue-900 leading-relaxed min-h-screen">
+<body>
 
-    <!-- Container trung tâm: Tự động căn giữa màn hình nhờ mx-auto -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 lg:py-16">
-        
-        <!-- Header Section -->
-        <header class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 mb-12 md:mb-16">
-            <div class="w-44 h-44 sm:w-52 sm:h-52 flex-shrink-0">
-                <img src="./page_files/Huỳnh Thái Bảo.jpg" alt="Thai Bao Huynh" class="w-full h-full object-cover rounded-3xl md:rounded-[2.5rem] shadow-xl border-4 md:border-8 border-white ring-1 ring-slate-200" onerror="this.src='https://via.placeholder.com/224?text=Bao'">
-            </div>
-            <div class="text-center md:text-left flex-grow">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-2 md:mb-3">Thai Bao Huynh</h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-blue-600 font-bold mb-6">AI Research Student @ UIT–VNUHCM | Research Assistant @ AISIA Lab</p>
-                
-                <div class="flex flex-wrap justify-center md:justify-start gap-2.5 sm:gap-3 mb-6 font-semibold text-xs sm:text-sm">
-                    <a href="mailto:tbaro27102005@gmail.com" class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-400 hover:text-blue-600 transition">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        Email
-                    </a>
-                    <a href="https://github.com/tbaro19/" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-400 hover:text-blue-600 transition">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.76-1.604-2.665-.3-5.466-1.334-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                        GitHub
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=JlHZAl4AAAAJ&hl=vi" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-400 hover:text-blue-600 transition">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                        Scholar
-                    </a>
-                    <a href="https://drive.google.com/file/d/11Ik-6ixiYFIfQMgBU7G1jF0qvXCPOZAl/view?usp=sharing" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-400 hover:text-blue-600 transition">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        CV (PDF)
-                    </a>
-                </div>
-                
-                <div class="bg-white p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-200 shadow-sm text-slate-700">
-                    <p class="italic text-slate-400 text-xs sm:text-sm border-l-2 border-blue-500 pl-3 mb-4">
-                        "This is not the destination, but the beginning of a new journey"
-                    </p>
-                    <p class="leading-relaxed text-xs sm:text-sm md:text-base">
-                        I am an AI student at the <a href="https://cs.uit.edu.vn/" class="font-bold text-slate-900 hover:text-blue-600">Faculty of Computer Science</a>, <a href="https://uit.edu.vn/" class="font-bold text-slate-900 hover:text-blue-600">University of Information Technology–VNUHCM</a>. Currently, I am a Research Assistant at <a href="https://aisia.vn/" class="font-bold text-slate-900 hover:text-blue-600">AISIA Research Lab</a> and a research student at <a href="https://nlp.uit.edu.vn/" class="font-bold text-slate-900 hover:text-blue-600">The UIT Natural Language Processing Group (NLP-UIT Group)</a> (previously a research student at <a href="https://sites.google.com/view/evolve-learn-optimize/home" class="font-bold text-slate-900 hover:text-blue-600">ELO Lab</a>). My research interests center around <strong>Natural Language Processing</strong> (Segmentation-Free & Phonemic Modeling), <strong>Adversarial Robustness & Evolution Strategies</strong>, and <strong>Ontology-Guided Hierarchical RAG</strong>.
-                    </p>
-                </div>
-            </div>
-        </header>
+  <!-- Aurora Ambient Glow -->
+  <div class="site-aurora"></div>
 
-        <!-- Main Content Sections -->
-        <div class="space-y-12 md:space-y-16">
-            
-            <!-- News Section -->
-            <section>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 md:mb-8 section-title">News</h2>
-                <div class="space-y-8 relative border-l-2 border-slate-200 pl-6 ml-2 text-xs sm:text-sm">
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-blue-600 ring-4 ring-white shadow"></div>
-                        <p class="text-[10px] font-black text-blue-600 uppercase mb-1 tracking-wider">AUG 2026</p>
-                        <p class="text-slate-700 font-medium">Attended <strong>The 13th Vietnam Summer School of Science (VSSS'13)</strong> and won <strong>1st Champion Science-athon</strong> for our research proposal.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-blue-600 ring-4 ring-white shadow"></div>
-                        <p class="text-[10px] font-black text-blue-600 uppercase mb-1 tracking-wider">JUL 2026</p>
-                        <p class="text-slate-700 font-medium">Joined <strong>AISIA Research Lab</strong> as a Research Assistant under Assoc. Prof. Nguyen Thanh Binh, working on Ontology-Guided Hierarchical RAG for bilingual medical support.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">APR 2026</p>
-                        <p class="text-slate-700 font-medium">Joined <strong>The UIT Natural Language Processing Group</strong> as a Research Student, focusing on Segmentation-Free and Phonemic Language Modeling.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">NOV/DEC 2025</p>
-                        <p class="text-slate-700 leading-relaxed">Our paper <strong>"FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning with Semantic Query Expansion and Exclusionary Search"</strong> was accepted to <strong>SOICT 2025</strong> in Nha Trang, Vietnam.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">SEP 2025</p>
-                        <p class="text-slate-700 leading-relaxed font-medium">Selected as 1 of 54 students nationwide to attend the <strong>SoICT Summer School – Agentic AI</strong>, organized by HUST.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">AUG 2025</p>
-                        <p class="text-slate-700 leading-relaxed">The <strong>SHREC 2025</strong> benchmark paper (ROOMELSA) has been published in <strong>Computers & Graphics</strong> journal (Q2).</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">JUL 2025</p>
-                        <p class="text-slate-700 leading-relaxed font-medium">Speaker at <strong>OpenInfra & Cloud Native Day Vietnam 2025</strong> endorsing MIC. Talk: <em>“ARM64 Meets AI: Benchmarking LLM Performance Across GH200, H100, and A100.”</em></p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">JUN 2025</p>
-                        <p class="text-slate-700 leading-relaxed">Paper on <strong>Adversarial Robustness Evaluation of a Vietnamese Handwriting OCR System</strong> accepted to <strong>MAPR 2025</strong>.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                        <p class="text-[10px] font-black text-slate-400 uppercase mb-1 tracking-wider">APR 2025</p>
-                        <p class="text-slate-700 leading-relaxed font-medium">Speaker at <strong>HCMC AI Meetup #1 - Menlo Research</strong> hosted at VNG Campus.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Research Advisors Section -->
-            <section>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 md:mb-8 section-title">Research Advisors</h2>
-                <div class="space-y-4 sm:space-y-5">
-                    <!-- Advisor 1: Co Ngan -->
-                    <div class="p-4 sm:p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card flex items-center gap-4 sm:gap-5 text-xs sm:text-sm">
-                        <img src="./page_files/co Ngan.jpg" alt="Assoc. Prof. Ngan Luu-Thuy Nguyen" class="advisor-avatar" onerror="this.src='https://via.placeholder.com/64?text=N'">
-                        <div class="flex-grow min-w-0">
-                            <h3 class="text-base font-bold text-slate-900 truncate">Assoc. Prof. Ngan Luu-Thuy Nguyen</h3>
-                            <p class="text-[11px] font-medium text-slate-500 mb-1 leading-snug">Vice Principal, University of Information Technology–VNUHCM</p>
-                            <a href="mailto:ngannlt@uit.edu.vn" class="text-xs font-semibold text-slate-400 hover:text-blue-600 transition inline-flex items-center gap-1.5">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                ngannlt@uit.edu.vn
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Advisor 2: Thay Binh -->
-                    <div class="p-4 sm:p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card flex items-center gap-4 sm:gap-5 text-xs sm:text-sm">
-                        <img src="./page_files/Thay Binh.jpg" alt="Assoc. Prof. Nguyen Thanh Binh" class="advisor-avatar" onerror="this.src='https://via.placeholder.com/64?text=B'">
-                        <div class="flex-grow min-w-0">
-                            <h3 class="text-base font-bold text-slate-900 truncate">Assoc. Prof. Nguyen Thanh Binh</h3>
-                            <p class="text-[11px] font-medium text-slate-500 mb-1 leading-snug">Managing Director, AISIA Research Lab | University of Science, VNUHCM</p>
-                            <a href="mailto:binh@aisia.vn" class="text-xs font-semibold text-slate-400 hover:text-blue-600 transition inline-flex items-center gap-1.5">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                binh@aisia.vn
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Advisor 3: Thay Hoang -->
-                    <div class="p-4 sm:p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card flex items-center gap-4 sm:gap-5 text-xs sm:text-sm">
-                        <img src="./page_files/Thay Hoang.jpg" alt="Ph.D. Ngoc Hoang Luong" class="advisor-avatar" onerror="this.src='https://via.placeholder.com/64?text=L'">
-                        <div class="flex-grow min-w-0">
-                            <h3 class="text-base font-bold text-slate-900 truncate">Ph.D. Ngoc Hoang Luong</h3>
-                            <p class="text-[11px] font-medium text-slate-500 mb-1 leading-snug">Head of Department of AI, Faculty of Computer Science, UIT</p>
-                            <a href="mailto:hoangln@uit.edu.vn" class="text-xs font-semibold text-slate-400 hover:text-blue-600 transition inline-flex items-center gap-1.5">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                hoangln@uit.edu.vn
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Advisor 4: Thay Nghia -->
-                    <div class="p-4 sm:p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-blue-400 transition card flex items-center gap-4 sm:gap-5 text-xs sm:text-sm">
-                        <img src="./page_files/Anh Nghia.jpg" alt="M.Sc. Nghia Hieu Nguyen" class="advisor-avatar" onerror="this.src='https://via.placeholder.com/64?text=N'">
-                        <div class="flex-grow min-w-0">
-                            <h3 class="text-base font-bold text-slate-900 truncate">M.Sc. Nghia Hieu Nguyen</h3>
-                            <p class="text-[11px] font-medium text-slate-500 mb-1 leading-snug">Lecturer, Faculty of Information Science and Engineering, UIT</p>
-                            <a href="mailto:nghiangh@uit.edu.vn" class="text-xs font-semibold text-slate-400 hover:text-blue-600 transition inline-flex items-center gap-1.5">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                nghiangh@uit.edu.vn
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Rewards Section -->
-            <section>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 md:mb-8 section-title">Rewards</h2>
-                <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm">
-                    <div class="p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl card flex justify-between items-center">
-                        <span class="font-bold text-slate-800">🏆 1st Champion Science-athon @ VSSS'13 (2026)</span>
-                        <span class="text-[10px] font-black text-amber-600 uppercase">Awarded</span>
-                    </div>
-                    <div class="p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl card flex justify-between items-center">
-                        <span class="font-bold text-slate-800">🏆 1st Champion xAI Hackathon 2025 @ IJCNN 2025</span>
-                        <a href="https://drive.google.com/file/d/1TOlDG2_hmkwgo1cuL1x9b12iLzxkyoXI/view?usp=sharing" target="_blank" class="text-[10px] font-black text-amber-600 underline uppercase">Certificate</a>
-                    </div>
-                    <div class="p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl card flex justify-between items-center">
-                        <span class="font-bold text-slate-800">🥇 1st Champion ROOMELSA @ SHREC 2025</span>
-                        <div class="flex gap-2">
-                            <a href="https://drive.google.com/file/d/16fKckGoNOe0zw4X1N_g6kb7QMSSYc0HF/view" target="_blank" class="text-[10px] font-black text-blue-600 underline uppercase">PERS</a>
-                            <a href="https://drive.google.com/file/d/1THOPAxyUMxaG3SZ0Su5lzRgAPV4Pgj5Z/view" target="_blank" class="text-[10px] font-black text-blue-700 underline uppercase">Team</a>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-slate-50 border-l-4 border-slate-600 rounded-r-xl card flex justify-between items-center">
-                        <span class="font-bold text-slate-600">🥈 2nd Prize EVENTA @ ACM Multimedia 2025</span>
-                        <a href="https://drive.google.com/file/d/1UqNPW0Igu9i0fCVPg61R0EYcBElwFLeB/view" target="_blank" class="text-[10px] font-black text-slate-400 underline uppercase font-bold">Certificate</a>
-                    </div>
-                    <div class="p-4 bg-slate-50 border-l-4 border-slate-400 rounded-r-xl card flex justify-between items-center">
-                        <span class="font-bold text-slate-600">🥉 3rd Prize Olympiad AI HCMC 2025</span>
-                        <a href="https://drive.google.com/file/d/1NU4qc9D9U_QSv7FTuixApeBqfxJ4hOir/view" target="_blank" class="text-[10px] font-black text-slate-400 underline uppercase font-bold">Certificate</a>
-                    </div>
-                    <div class="p-4 bg-slate-50 border-l-4 border-slate-300 rounded-r-xl card flex justify-between items-center">
-                        <span class="font-bold text-slate-500 font-bold">🏅 4th Prize Vietnam Science & Engineering Fair 2023</span>
-                        <a href="https://drive.google.com/file/d/1ZkzIwacse7GyL3b3BCM5jFfHAdiIWGC8/view" target="_blank" class="text-[10px] font-black text-slate-400 underline uppercase font-bold">Certificate</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Publications Section -->
-            <section>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 md:mb-8 section-title">Publications</h2>
-                <div class="space-y-6 sm:space-y-8">
-                    <div class="card bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
-                            <h4 class="text-base sm:text-lg font-black text-slate-900 leading-snug">ROOMELSA: Retrieval of Optimal Objects for Multi-modal Enhanced Language and Spatial Assistance</h4>
-                            <span class="self-start px-2.5 py-0.5 bg-blue-100 text-blue-700 rounded-md text-[10px] font-black uppercase">Computers & Graphics (Q2)</span>
-                        </div>
-                        <p class="text-xs text-slate-600 mb-4 font-medium leading-relaxed">Trong-Thuan Nguyen, Viet-Tham Huynh, ..., <strong>Bao Huynh Thai</strong>, ..., Minh-Triet Tran.</p>
-                        <div class="flex gap-4 pt-3 border-t border-slate-100 font-bold text-xs sm:text-sm">
-                            <a href="https://doi.org/10.1016/j.cag.2025.104400" target="_blank" class="link-icon">Paper</a>
-                            <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" class="link-icon font-black">Code</a>
-                        </div>
-                    </div>
-                    <div class="card bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
-                            <h4 class="text-base sm:text-lg font-black text-slate-900 leading-snug">Adversarial Robustness Evaluation of a Vietnamese Handwriting OCR System</h4>
-                            <span class="self-start px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-md text-[10px] font-black uppercase">MAPR 2025</span>
-                        </div>
-                        <p class="text-xs text-slate-600 mb-4 font-medium leading-relaxed"><strong>Thai Bao Huynh</strong>, Quan Minh Phan, Viet-Hang Duong, Ngoc Hoang Luong.</p>
-                        <div class="flex gap-4 pt-3 border-t border-slate-100 font-bold text-xs sm:text-sm">
-                            <a href="https://ieeexplore.ieee.org/document/11133909" target="_blank" class="link-icon">Paper</a>
-                            <a href="https://github.com/tbaro19/AdvRE-ViHandOCR/" target="_blank" class="link-icon font-black">Code</a>
-                        </div>
-                    </div>
-                    <div class="card bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
-                            <h4 class="text-base sm:text-lg font-black text-slate-900 leading-snug">FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning with Semantic Query Expansion</h4>
-                            <span class="self-start px-2.5 py-0.5 bg-slate-100 text-slate-700 rounded-md text-[10px] font-black uppercase">SOICT 2025</span>
-                        </div>
-                        <p class="text-xs text-slate-600 mb-4 font-medium leading-relaxed">Nhat-Trung Nguyen-Tran, <strong>Thai Bao Huynh</strong>, Hai-Dang Pham, Hieu Thien Vu, Y-Nhi Duong-Thai, Thang Cap Pham Dinh.</p>
-                        <div class="flex gap-4 pt-3 border-t border-slate-100 font-bold text-xs sm:text-sm">
-                            <a href="https://link.springer.com/chapter/10.1007/978-981-92-2587-3_1" target="_blank" class="link-icon">Paper</a>
-                            <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" class="link-icon font-black">Code</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 md:mb-8 section-title">Projects</h2>
-                
-                <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Personal & Research Projects</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8">
-                    <div class="p-5 sm:p-6 bg-slate-900 rounded-2xl text-white shadow card border-none">
-                        <h4 class="font-bold text-base mb-2 flex items-center justify-between text-blue-400">Ontology-Guided RAG <span class="badge bg-blue-900 text-blue-200">Ongoing</span></h4>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-3">Hierarchical RAG for trustworthy bilingual Alzheimer's Disease information support using structured semantic ontology.</p>
-                        <span class="text-[10px] text-slate-500 font-semibold">AISIA Research Lab</span>
-                    </div>
-                    <div class="p-5 sm:p-6 bg-white border border-slate-200 rounded-2xl shadow-sm card font-bold">
-                        <h4 class="font-black text-slate-900 text-base mb-2 flex items-center justify-between">AdvRE-ViHandOCR <a href="https://github.com/tbaro19/AdvRE-ViHandOCR" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></h4>
-                        <p class="text-xs text-slate-600 leading-relaxed font-normal">Vietnamese handwriting OCR robustness evaluation against PGD white-box adversarial attacks.</p>
-                    </div>
-                </div>
-
-                <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Team Projects</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div class="p-5 sm:p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-blue-500 transition card">
-                        <h4 class="font-bold text-blue-600 mb-1 text-sm sm:text-base">PhonemicBERT</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed">Includes PinyinBERT & ViPhonBERT: IPA triplet representation for isolating languages.</p>
-                        <span class="text-[10px] text-slate-400 font-bold uppercase">NLP-UIT Group</span>
-                    </div>
-                    <div class="p-5 sm:p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-blue-500 transition card">
-                        <h4 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">xAI-for-edu</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed">Winner of IJCNN 2025 xAI Hackathon. Developed neuro-symbolic QA systems.</p>
-                        <a href="https://github.com/tbaro19/XAI-4-Edu" target="_blank" class="text-[10px] text-blue-600 underline font-black uppercase">Repo</a>
-                    </div>
-                    <div class="p-5 sm:p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-blue-500 transition card">
-                        <h4 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">3D-Objects-Retrieval</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed">Winner solution of SHREC 2025 via spatial and natural language context.</p>
-                        <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" class="text-[10px] text-blue-600 underline font-black uppercase">Repo</a>
-                    </div>
-                    <div class="p-5 sm:p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-blue-500 transition card">
-                        <h4 class="font-bold text-slate-900 mb-1 text-sm sm:text-base">FRED</h4>
-                        <p class="text-xs text-slate-500 mb-3 leading-relaxed">Multimodal fusion video events retrieval system for AI Challenge HCMC 2025.</p>
-                        <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" class="text-[10px] text-blue-600 underline font-black uppercase">Repo</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Presentations & Activities -->
-            <section>
-                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-6 md:mb-8 section-title">Presentations & Activities</h2>
-                <div class="space-y-4 sm:space-y-5">
-                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 p-5 sm:p-6 bg-blue-900 rounded-2xl text-white card shadow">
-                        <div class="flex-grow">
-                            <h4 class="font-bold text-sm uppercase text-blue-300">HCMC AI Meetup #1 - Menlo Research</h4>
-                            <p class="text-xs text-slate-300 mt-1">"Training on NVIDIA GH200: Optimizing for ARM Architecture" (VNG Campus)</p>
-                            <a href="https://www.youtube.com/watch?v=lKEEYsIdD00" target="_blank" class="mt-3 inline-block px-4 py-1.5 bg-red-600 rounded-lg text-[10px] font-bold uppercase shadow">Watch Video</a>
-                        </div>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 p-5 sm:p-6 bg-white border border-slate-200 rounded-2xl card shadow-sm">
-                        <div class="flex-grow">
-                            <h4 class="font-bold text-sm uppercase text-slate-900">OpenInfra & Cloud Native Day Vietnam 2025</h4>
-                            <p class="text-xs text-slate-500 mt-1 font-medium">Benchmarking LLMs Performance (Endorsed by MIC)</p>
-                            <div class="flex gap-2 mt-3">
-                                <a href="https://youtu.be/4ZRzjk8cHSE" target="_blank" class="btn-link">Video</a>
-                                <a href="https://drive.google.com/file/d/1Uu7GmHWRlECg74ziJHs1My1uQApdQZgY/view" target="_blank" class="btn-link">Slides</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-5 sm:p-6 bg-slate-50 rounded-2xl border border-slate-200 card">
-                        <p class="font-bold text-slate-900 mb-1 text-sm">Mentor & Speaker @ <a href="https://www.facebook.com/sciencelab.stem" class="text-blue-600 underline">Science Lab</a>'s Programs</p>
-                        <p class="text-xs text-slate-500">ELECTRAHACK 2023, SIP 2024, ICOHACK 2024, SOFTHACK 2025, and AIHACK 2026. Narrowing the STEM gap for 150+ students in Dak Lak.</p>
-                    </div>
-                    <div class="p-4 sm:p-5 bg-white border border-slate-200 rounded-2xl flex items-center justify-between card">
-                        <span class="text-slate-900 text-xs sm:text-sm font-semibold">The 13th Vietnam Summer School of Science (VSSS'13) 2026</span>
-                        <span class="text-[10px] font-black text-blue-600 uppercase">Participant</span>
-                    </div>
-                </div>
-            </section>
+  <!-- ============================================================
+       Site Header & Sticky Navigation
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#about" class="brand-wrapper">
+        <span class="brand-badge">TB</span>
+        <div>
+          <span class="brand-title">Thai Bao Huynh</span>
+          <span class="brand-role"> · AI Research</span>
         </div>
+      </a>
 
-        <!-- Footer -->
-        <footer class="mt-20 md:mt-28 pt-8 border-t border-slate-200 flex flex-col items-center">
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4">Thai Bao Huynh</p>
-            <div class="flex gap-6 text-xs font-semibold text-slate-500">
-                <a href="https://github.com/tbaro19/" class="hover:text-blue-600 transition">GitHub</a>
-                <a href="https://scholar.google.com/citations?user=JlHZAl4AAAAJ&hl=vi" class="hover:text-blue-600 transition">Scholar</a>
-                <a href="https://uit.edu.vn/" class="hover:text-blue-600 transition">University</a>
-            </div>
-            <p class="mt-6 text-[10px] text-slate-400">© 2026 • AI Research Student</p>
-        </footer>
+      <!-- Desktop Nav -->
+      <nav class="main-nav">
+        <a href="#about" class="nav-link active">About</a>
+        <a href="#news" class="nav-link">News</a>
+        <a href="#advisors" class="nav-link">Advisors</a>
+        <a href="#awards" class="nav-link">Awards</a>
+        <a href="#publications" class="nav-link">Publications</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#activities" class="nav-link">Activities</a>
+      </nav>
 
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Light / Dark Mode">
+          <span>THEME: <strong id="themeStatusText">LIGHT</strong></span>
+        </button>
+
+        <button id="mobileMenuBtn" class="mobile-menu-btn" title="Open Menu">
+          [MENU]
+        </button>
+      </div>
     </div>
 
+    <!-- Mobile Nav Panel -->
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#news" class="nav-link">News</a>
+      <a href="#advisors" class="nav-link">Advisors</a>
+      <a href="#awards" class="nav-link">Awards</a>
+      <a href="#publications" class="nav-link">Publications</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#activities" class="nav-link">Activities</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       Hero & Identity Section
+       ============================================================ -->
+  <section id="about" class="hero-section scroll-reveal">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: Bio & Contacts -->
+        <div class="hero-profile-card">
+          <div class="hero-identity-row">
+            <div class="hero-avatar-wrapper">
+              <img src="page_files/Hu%E1%BB%B3nh%20Th%C3%A1i%20B%E1%BA%A3o.jpg" alt="Thai Bao Huynh" class="hero-avatar-img" onerror="this.src='page_files/Bao.jpg'">
+              <span class="hero-status-pulse" title="Active in AI Research"></span>
+            </div>
+
+            <div class="hero-meta">
+              <div class="kicker-pill">
+                <span class="dot-indicator pulse"></span>
+                <span>UIT–VNUHCM · FACULTY OF COMPUTER SCIENCE</span>
+              </div>
+              <h1 class="hero-name font-display">Thai Bao Huynh</h1>
+              <p class="hero-title-tagline">AI Research Student @ UIT–VNUHCM | Research Assistant @ AISIA Lab</p>
+            </div>
+          </div>
+
+          <!-- Personal Quote Banner -->
+          <div class="hero-quote-box">
+            "This is not the destination, but the beginning of a new journey"
+          </div>
+
+          <!-- Detailed Bio -->
+          <p class="hero-bio">
+            I am an AI student at the <a href="https://cs.uit.edu.vn/" target="_blank" rel="noopener noreferrer">Faculty of Computer Science</a>, <a href="https://uit.edu.vn/" target="_blank" rel="noopener noreferrer">University of Information Technology–VNUHCM</a>. Currently, I am a Research Assistant at <a href="https://aisia.vn/" target="_blank" rel="noopener noreferrer">AISIA Research Lab</a> and a research student at <a href="https://nlp.uit.edu.vn/" target="_blank" rel="noopener noreferrer">The UIT Natural Language Processing Group (NLP-UIT Group)</a> (previously a research student at <a href="https://sites.google.com/view/evolve-learn-optimize/home" target="_blank" rel="noopener noreferrer">ELO Lab</a>). My research interests center around <strong>Natural Language Processing</strong> (Segmentation-Free & Phonemic Modeling), <strong>Adversarial Robustness & Evolution Strategies</strong>, and <strong>Ontology-Guided Hierarchical RAG</strong>.
+          </p>
+
+          <!-- Contact & Academic Links Strip -->
+          <div class="hero-links-strip">
+            <a href="mailto:tbaro27102005@gmail.com" class="pill-link">
+              <span>✉</span> Email
+            </a>
+            <a href="https://github.com/tbaro19/" target="_blank" rel="noopener noreferrer" class="pill-link">
+              <span>⌥</span> GitHub
+            </a>
+            <a href="https://scholar.google.com/citations?user=JlHZAl4AAAAJ&hl=vi" target="_blank" rel="noopener noreferrer" class="pill-link">
+              <span>🎓</span> Google Scholar
+            </a>
+            <a href="https://drive.google.com/file/d/11Ik-6ixiYFIfQMgBU7G1jF0qvXCPOZAl/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="pill-link primary-cv">
+              <span>📄</span> Curriculum Vitae (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Phonemic & Tokenizer Visualizer -->
+        <div class="hero-interactive-panel">
+          <div class="research-lab-card" id="phonemicLabCard">
+            <div class="lab-card-header">
+              <div class="lab-card-title">
+                <span class="dot-indicator pulse"></span>
+                <span>PHONEMIC & SEGMENTATION-FREE LM LAB</span>
+              </div>
+              <div class="lab-card-controls">
+                <button type="button" id="vnTokenSampleBtn" class="btn-sample" title="Chuyển câu tiếng Việt mẫu">[ĐỔI CÂU MẪU ⟳]</button>
+              </div>
+            </div>
+
+            <div class="lab-pipeline-stage font-mono">
+              <span id="phonemicStageBadge">BƯỚC: PHÂN TÁCH ÂM TIẾT & NGỮ ÂM IPA</span>
+              <span>TOKEN-FREE</span>
+            </div>
+
+            <div class="input-preview-box">
+              <div class="preview-label">CÂU TIẾNG VIỆT ĐẦU VÀO</div>
+              <div class="preview-sentence" id="phonemicSentence">"Mô hình ngôn ngữ tự nhiên không phân đoạn từ"</div>
+            </div>
+
+            <div class="pipeline-tokens-wrap" id="phonemicTokens">
+              <!-- Dynamically populated tokens -->
+            </div>
+
+            <div class="lab-metrics-grid">
+              <div class="metric-cell">
+                <div class="metric-name">Syllables</div>
+                <div class="metric-val" id="metricTokenCount">10</div>
+              </div>
+              <div class="metric-cell">
+                <div class="metric-name">IPA Triplets</div>
+                <div class="metric-val" id="metricIpaCount">26</div>
+              </div>
+              <div class="metric-cell">
+                <div class="metric-name">Latent Dim</div>
+                <div class="metric-val" id="metricLatentDim">768d</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       News Timeline Section
+       ============================================================ -->
+  <section id="news" class="content-section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>News & Milestones</span>
+        </h2>
+        <span class="section-counter">9 UPDATES</span>
+      </div>
+
+      <div class="timeline-list">
+        <!-- 1. Aug 2026 -->
+        <div class="timeline-item highlight">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">AUG 2026</span>
+            <span class="timeline-badge">Champion</span>
+          </div>
+          <p class="timeline-content">
+            Attended <strong>The 13th Vietnam Summer School of Science (VSSS'13)</strong> and won <strong>1st Champion Science-athon</strong> for our research proposal.
+          </p>
+        </div>
+
+        <!-- 2. Jul 2026 -->
+        <div class="timeline-item highlight">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">JUL 2026</span>
+            <span class="timeline-badge">Appointment</span>
+          </div>
+          <p class="timeline-content">
+            Joined <strong>AISIA Research Lab</strong> as a Research Assistant under Assoc. Prof. Nguyen Thanh Binh, working on Ontology-Guided Hierarchical RAG for bilingual medical support.
+          </p>
+        </div>
+
+        <!-- 3. Apr 2026 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">APR 2026</span>
+          </div>
+          <p class="timeline-content">
+            Joined <strong>The UIT Natural Language Processing Group</strong> as a Research Student, focusing on Segmentation-Free and Phonemic Language Modeling.
+          </p>
+        </div>
+
+        <!-- 4. Nov/Dec 2025 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">NOV / DEC 2025</span>
+          </div>
+          <p class="timeline-content">
+            Our paper <strong>"FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning with Semantic Query Expansion and Exclusionary Search"</strong> was accepted to <strong>SOICT 2025</strong> in Nha Trang, Vietnam.
+          </p>
+        </div>
+
+        <!-- 5. Sep 2025 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">SEP 2025</span>
+          </div>
+          <p class="timeline-content">
+            Selected as 1 of 54 students nationwide to attend the <strong>SoICT Summer School – Agentic AI</strong>, organized by HUST.
+          </p>
+        </div>
+
+        <!-- 6. Aug 2025 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">AUG 2025</span>
+          </div>
+          <p class="timeline-content">
+            The <strong>SHREC 2025</strong> benchmark paper (ROOMELSA) has been published in <strong>Computers & Graphics</strong> journal (Q2).
+          </p>
+        </div>
+
+        <!-- 7. Jul 2025 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">JUL 2025</span>
+          </div>
+          <p class="timeline-content">
+            Speaker at <strong>OpenInfra & Cloud Native Day Vietnam 2025</strong> endorsing MIC. Talk: <em>"ARM64 Meets AI: Benchmarking LLM Performance Across GH200, H100, and A100."</em>
+          </p>
+        </div>
+
+        <!-- 8. Jun 2025 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">JUN 2025</span>
+          </div>
+          <p class="timeline-content">
+            Paper on <strong>Adversarial Robustness Evaluation of a Vietnamese Handwriting OCR System</strong> accepted to <strong>MAPR 2025</strong>.
+          </p>
+        </div>
+
+        <!-- 9. Apr 2025 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date-row">
+            <span class="timeline-date">APR 2025</span>
+          </div>
+          <p class="timeline-content">
+            Speaker at <strong>HCMC AI Meetup #1 - Menlo Research</strong> hosted at VNG Campus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Research Advisors Section
+       ============================================================ -->
+  <section id="advisors" class="content-section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>Research Advisors</span>
+        </h2>
+        <span class="section-counter">4 MENTORS</span>
+      </div>
+
+      <div class="advisors-grid">
+        <!-- Advisor 1: Co Ngan -->
+        <div class="advisor-card">
+          <img src="page_files/co%20Ngan.jpg" alt="Assoc. Prof. Ngan Luu-Thuy Nguyen" class="advisor-avatar-img" onerror="this.src='https://via.placeholder.com/64?text=N'">
+          <div class="advisor-info">
+            <h3 class="advisor-name">Assoc. Prof. Ngan Luu-Thuy Nguyen</h3>
+            <p class="advisor-role">Vice Principal, University of Information Technology–VNUHCM</p>
+            <a href="mailto:ngannlt@uit.edu.vn" class="advisor-email-link">
+              <span>✉</span> ngannlt@uit.edu.vn
+            </a>
+          </div>
+        </div>
+
+        <!-- Advisor 2: Thay Binh -->
+        <div class="advisor-card">
+          <img src="page_files/Thay%20Binh.jpg" alt="Assoc. Prof. Nguyen Thanh Binh" class="advisor-avatar-img" onerror="this.src='https://via.placeholder.com/64?text=B'">
+          <div class="advisor-info">
+            <h3 class="advisor-name">Assoc. Prof. Nguyen Thanh Binh</h3>
+            <p class="advisor-role">Managing Director, AISIA Research Lab | University of Science, VNUHCM</p>
+            <a href="mailto:binh@aisia.vn" class="advisor-email-link">
+              <span>✉</span> binh@aisia.vn
+            </a>
+          </div>
+        </div>
+
+        <!-- Advisor 3: Thay Hoang -->
+        <div class="advisor-card">
+          <img src="page_files/Thay%20Hoang.jpg" alt="Ph.D. Ngoc Hoang Luong" class="advisor-avatar-img" onerror="this.src='https://via.placeholder.com/64?text=L'">
+          <div class="advisor-info">
+            <h3 class="advisor-name">Ph.D. Ngoc Hoang Luong</h3>
+            <p class="advisor-role">Head of Department of AI, Faculty of Computer Science, UIT</p>
+            <a href="mailto:hoangln@uit.edu.vn" class="advisor-email-link">
+              <span>✉</span> hoangln@uit.edu.vn
+            </a>
+          </div>
+        </div>
+
+        <!-- Advisor 4: Thay Nghia -->
+        <div class="advisor-card">
+          <img src="page_files/Anh%20Nghia.jpg" alt="M.Sc. Nghia Hieu Nguyen" class="advisor-avatar-img" onerror="this.src='https://via.placeholder.com/64?text=N'">
+          <div class="advisor-info">
+            <h3 class="advisor-name">M.Sc. Nghia Hieu Nguyen</h3>
+            <p class="advisor-role">Lecturer, Faculty of Information Science and Engineering, UIT</p>
+            <a href="mailto:nghiangh@uit.edu.vn" class="advisor-email-link">
+              <span>✉</span> nghiangh@uit.edu.vn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Rewards & Honors Section
+       ============================================================ -->
+  <section id="awards" class="content-section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>Honors & Awards</span>
+        </h2>
+        <span class="section-counter">6 ACCOLADES</span>
+      </div>
+
+      <div class="rewards-list">
+        <div class="reward-card gold">
+          <div class="reward-title-group">
+            <span class="reward-icon">🏆</span>
+            <span class="reward-title">1st Champion Science-athon @ VSSS'13 (2026)</span>
+          </div>
+          <div class="reward-links">
+            <span class="reward-cert-btn" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: var(--color-ink);">AWARDED</span>
+          </div>
+        </div>
+
+        <div class="reward-card gold">
+          <div class="reward-title-group">
+            <span class="reward-icon">🏆</span>
+            <span class="reward-title">1st Champion xAI Hackathon 2025 @ IJCNN 2025</span>
+          </div>
+          <div class="reward-links">
+            <a href="https://drive.google.com/file/d/1TOlDG2_hmkwgo1cuL1x9b12iLzxkyoXI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="reward-cert-btn">Certificate ↗</a>
+          </div>
+        </div>
+
+        <div class="reward-card blue">
+          <div class="reward-title-group">
+            <span class="reward-icon">🥇</span>
+            <span class="reward-title">1st Champion ROOMELSA @ SHREC 2025</span>
+          </div>
+          <div class="reward-links">
+            <a href="https://drive.google.com/file/d/16fKckGoNOe0zw4X1N_g6kb7QMSSYc0HF/view" target="_blank" rel="noopener noreferrer" class="reward-cert-btn">PERS ↗</a>
+            <a href="https://drive.google.com/file/d/1THOPAxyUMxaG3SZ0Su5lzRgAPV4Pgj5Z/view" target="_blank" rel="noopener noreferrer" class="reward-cert-btn">Team ↗</a>
+          </div>
+        </div>
+
+        <div class="reward-card silver">
+          <div class="reward-title-group">
+            <span class="reward-icon">🥈</span>
+            <span class="reward-title">2nd Prize EVENTA @ ACM Multimedia 2025</span>
+          </div>
+          <div class="reward-links">
+            <a href="https://drive.google.com/file/d/1UqNPW0Igu9i0fCVPg61R0EYcBElwFLeB/view" target="_blank" rel="noopener noreferrer" class="reward-cert-btn">Certificate ↗</a>
+          </div>
+        </div>
+
+        <div class="reward-card silver">
+          <div class="reward-title-group">
+            <span class="reward-icon">🥉</span>
+            <span class="reward-title">3rd Prize Olympiad AI HCMC 2025</span>
+          </div>
+          <div class="reward-links">
+            <a href="https://drive.google.com/file/d/1NU4qc9D9U_QSv7FTuixApeBqfxJ4hOir/view" target="_blank" rel="noopener noreferrer" class="reward-cert-btn">Certificate ↗</a>
+          </div>
+        </div>
+
+        <div class="reward-card silver">
+          <div class="reward-title-group">
+            <span class="reward-icon">🏅</span>
+            <span class="reward-title">4th Prize Vietnam Science & Engineering Fair 2023</span>
+          </div>
+          <div class="reward-links">
+            <a href="https://drive.google.com/file/d/1ZkzIwacse7GyL3b3BCM5jFfHAdiIWGC8/view" target="_blank" rel="noopener noreferrer" class="reward-cert-btn">Certificate ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Publications Section
+       ============================================================ -->
+  <section id="publications" class="content-section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>Selected Publications</span>
+        </h2>
+        <span class="section-counter">3 PAPERS</span>
+      </div>
+
+      <div class="publications-list">
+        <!-- Publication 1: ROOMELSA -->
+        <div class="pub-card">
+          <div class="pub-header-row">
+            <h3 class="pub-title">ROOMELSA: Retrieval of Optimal Objects for Multi-modal Enhanced Language and Spatial Assistance</h3>
+            <span class="pub-venue-badge q2">Computers & Graphics (Q2)</span>
+          </div>
+          <p class="pub-authors">
+            Trong-Thuan Nguyen, Viet-Tham Huynh, ..., <strong>Bao Huynh Thai</strong>, ..., Minh-Triet Tran.
+          </p>
+          <div class="pub-actions">
+            <a href="https://doi.org/10.1016/j.cag.2025.104400" target="_blank" rel="noopener noreferrer" class="pub-btn">
+              <span>📄</span> Paper DOI ↗
+            </a>
+            <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" rel="noopener noreferrer" class="pub-btn">
+              <span>⌥</span> Code Repo ↗
+            </a>
+            <button type="button" class="pub-btn pub-bibtex-btn" data-target="bibtex-roomelsa">[BibTeX]</button>
+          </div>
+          <div class="pub-bibtex-block" id="bibtex-roomelsa">
+            <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem;">
+              <span>BIBTEX CITATION:</span>
+              <button type="button" class="copy-bibtex-btn pub-btn text-xs" data-target="bibtex-roomelsa">[COPY]</button>
+            </div>
+            <pre>@article{nguyen2025roomelsa,
+  title={ROOMELSA: Retrieval of Optimal Objects for Multi-modal Enhanced Language and Spatial Assistance},
+  author={Nguyen, Trong-Thuan and Huynh, Viet-Tham and Huynh, Thai Bao and Tran, Minh-Triet and others},
+  journal={Computers & Graphics},
+  year={2025},
+  publisher={Elsevier},
+  doi={10.1016/j.cag.2025.104400}
+}</pre>
+          </div>
+        </div>
+
+        <!-- Publication 2: AdvRE-ViHandOCR -->
+        <div class="pub-card">
+          <div class="pub-header-row">
+            <h3 class="pub-title">Adversarial Robustness Evaluation of a Vietnamese Handwriting OCR System</h3>
+            <span class="pub-venue-badge">MAPR 2025</span>
+          </div>
+          <p class="pub-authors">
+            <strong>Thai Bao Huynh</strong>, Quan Minh Phan, Viet-Hang Duong, Ngoc Hoang Luong.
+          </p>
+          <div class="pub-actions">
+            <a href="https://ieeexplore.ieee.org/document/11133909" target="_blank" rel="noopener noreferrer" class="pub-btn">
+              <span>📄</span> Paper IEEE ↗
+            </a>
+            <a href="https://github.com/tbaro19/AdvRE-ViHandOCR/" target="_blank" rel="noopener noreferrer" class="pub-btn">
+              <span>⌥</span> Code Repo ↗
+            </a>
+            <button type="button" class="pub-btn pub-bibtex-btn" data-target="bibtex-mapr">[BibTeX]</button>
+          </div>
+          <div class="pub-bibtex-block" id="bibtex-mapr">
+            <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem;">
+              <span>BIBTEX CITATION:</span>
+              <button type="button" class="copy-bibtex-btn pub-btn text-xs" data-target="bibtex-mapr">[COPY]</button>
+            </div>
+            <pre>@inproceedings{huynh2025adversarial,
+  title={Adversarial Robustness Evaluation of a Vietnamese Handwriting OCR System},
+  author={Huynh, Thai Bao and Phan, Quan Minh and Duong, Viet-Hang and Luong, Ngoc Hoang},
+  booktitle={2025 8th International Conference on Multimedia Analysis and Pattern Recognition (MAPR)},
+  year={2025},
+  organization={IEEE}
+}</pre>
+          </div>
+        </div>
+
+        <!-- Publication 3: FRED -->
+        <div class="pub-card">
+          <div class="pub-header-row">
+            <h3 class="pub-title">FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning with Semantic Query Expansion</h3>
+            <span class="pub-venue-badge">SOICT 2025</span>
+          </div>
+          <p class="pub-authors">
+            Nhat-Trung Nguyen-Tran, <strong>Thai Bao Huynh</strong>, Hai-Dang Pham, Hieu Thien Vu, Y-Nhi Duong-Thai, Thang Cap Pham Dinh.
+          </p>
+          <div class="pub-actions">
+            <a href="https://link.springer.com/chapter/10.1007/978-981-92-2587-3_1" target="_blank" rel="noopener noreferrer" class="pub-btn">
+              <span>📄</span> Paper Springer ↗
+            </a>
+            <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" rel="noopener noreferrer" class="pub-btn">
+              <span>⌥</span> Code Repo ↗
+            </a>
+            <button type="button" class="pub-btn pub-bibtex-btn" data-target="bibtex-soict">[BibTeX]</button>
+          </div>
+          <div class="pub-bibtex-block" id="bibtex-soict">
+            <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem;">
+              <span>BIBTEX CITATION:</span>
+              <button type="button" class="copy-bibtex-btn pub-btn text-xs" data-target="bibtex-soict">[COPY]</button>
+            </div>
+            <pre>@incollection{nguyen2025fred,
+  title={FRED: Unified Multimodal Fusion and Dynamic Temporal Reasoning with Semantic Query Expansion},
+  author={Nguyen-Tran, Nhat-Trung and Huynh, Thai Bao and Pham, Hai-Dang and Vu, Hieu Thien and Duong-Thai, Y-Nhi and Pham Dinh, Thang Cap},
+  booktitle={Symposium on Information and Communication Technology (SOICT 2025)},
+  pages={1--10},
+  year={2025},
+  publisher={Springer}
+}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Projects Section
+       ============================================================ -->
+  <section id="projects" class="content-section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>Research & Engineering Projects</span>
+        </h2>
+        <span class="section-counter">6 INITIATIVES</span>
+      </div>
+
+      <div class="projects-subheading">Personal & Research Projects</div>
+      <div class="projects-grid">
+        <!-- Project 1: Ontology-Guided RAG -->
+        <div class="project-card featured-card">
+          <div class="project-header">
+            <h4 class="project-title">Ontology-Guided RAG</h4>
+            <span class="project-tag">ONGOING</span>
+          </div>
+          <p class="project-desc">
+            Hierarchical RAG for trustworthy bilingual Alzheimer's Disease information support using structured semantic ontology.
+          </p>
+          <div class="project-footer">
+            <span class="project-lab">AISIA Research Lab</span>
+            <span class="project-repo-link">Active Research</span>
+          </div>
+        </div>
+
+        <!-- Project 2: AdvRE-ViHandOCR -->
+        <div class="project-card">
+          <div class="project-header">
+            <h4 class="project-title">AdvRE-ViHandOCR</h4>
+            <span class="project-tag">ROBUSTNESS</span>
+          </div>
+          <p class="project-desc">
+            Vietnamese handwriting OCR robustness evaluation framework against PGD white-box adversarial attacks.
+          </p>
+          <div class="project-footer">
+            <span class="project-lab">Open Source</span>
+            <a href="https://github.com/tbaro19/AdvRE-ViHandOCR" target="_blank" rel="noopener noreferrer" class="project-repo-link">View Repo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-subheading">Team Projects</div>
+      <div class="projects-grid">
+        <!-- Project 3: PhonemicBERT -->
+        <div class="project-card">
+          <div class="project-header">
+            <h4 class="project-title" style="color: var(--color-accent-blue);">PhonemicBERT</h4>
+            <span class="project-tag">NLP-UIT</span>
+          </div>
+          <p class="project-desc">
+            Includes PinyinBERT & ViPhonBERT: IPA triplet representation for isolating languages and token-free modeling.
+          </p>
+          <div class="project-footer">
+            <span class="project-lab">The UIT NLP Group</span>
+            <span class="project-repo-link">Core Focus</span>
+          </div>
+        </div>
+
+        <!-- Project 4: xAI-for-edu -->
+        <div class="project-card">
+          <div class="project-header">
+            <h4 class="project-title">xAI-for-edu</h4>
+            <span class="project-tag">IJCNN 2025</span>
+          </div>
+          <p class="project-desc">
+            Winner solution of IJCNN 2025 xAI Hackathon. Developed neuro-symbolic explainable QA systems.
+          </p>
+          <div class="project-footer">
+            <span class="project-lab">AI Education</span>
+            <a href="https://github.com/tbaro19/XAI-4-Edu" target="_blank" rel="noopener noreferrer" class="project-repo-link">View Repo ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 5: 3D-Objects-Retrieval -->
+        <div class="project-card">
+          <div class="project-header">
+            <h4 class="project-title">3D-Objects-Retrieval</h4>
+            <span class="project-tag">SHREC 2025</span>
+          </div>
+          <p class="project-desc">
+            Winner solution of SHREC 2025 track via spatial and natural language multimodal grounding context.
+          </p>
+          <div class="project-footer">
+            <span class="project-lab">Multimodal</span>
+            <a href="https://github.com/tbaro19/3d-object-retrieval" target="_blank" rel="noopener noreferrer" class="project-repo-link">View Repo ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 6: FRED Video Search -->
+        <div class="project-card">
+          <div class="project-header">
+            <h4 class="project-title">FRED Video Search</h4>
+            <span class="project-tag">SOICT 2025</span>
+          </div>
+          <p class="project-desc">
+            Multimodal fusion video events retrieval system for AI Challenge HCMC 2025 and SOICT conference.
+          </p>
+          <div class="project-footer">
+            <span class="project-lab">Video & NLP</span>
+            <a href="https://github.com/tbaro19/FRED-Video-Search-System" target="_blank" rel="noopener noreferrer" class="project-repo-link">View Repo ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Presentations & Activities Section
+       ============================================================ -->
+  <section id="activities" class="content-section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>Presentations & Activities</span>
+        </h2>
+        <span class="section-counter">COMMUNITY & TALKS</span>
+      </div>
+
+      <div class="activities-list">
+        <!-- Activity 1: Menlo Research -->
+        <div class="activity-card spotlight-card">
+          <span class="activity-tag">Featured Presentation</span>
+          <h3 class="activity-title">HCMC AI Meetup #1 - Menlo Research</h3>
+          <p class="activity-desc">
+            "Training on NVIDIA GH200: Optimizing for ARM Architecture" (Hosted at VNG Campus, HCMC).
+          </p>
+          <div class="activity-actions">
+            <a href="https://www.youtube.com/watch?v=lKEEYsIdD00" target="_blank" rel="noopener noreferrer" class="act-btn red">
+              <span>▶</span> Watch Video ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Activity 2: OpenInfra -->
+        <div class="activity-card">
+          <span class="activity-tag">Keynote & Benchmark</span>
+          <h3 class="activity-title">OpenInfra & Cloud Native Day Vietnam 2025</h3>
+          <p class="activity-desc">
+            Benchmarking LLMs Performance (Endorsed by Ministry of Information and Communications - MIC).
+          </p>
+          <div class="activity-actions">
+            <a href="https://youtu.be/4ZRzjk8cHSE" target="_blank" rel="noopener noreferrer" class="act-btn neutral">
+              <span>▶</span> Video ↗
+            </a>
+            <a href="https://drive.google.com/file/d/1Uu7GmHWRlECg74ziJHs1My1uQApdQZgY/view" target="_blank" rel="noopener noreferrer" class="act-btn neutral">
+              <span>📄</span> Slides ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Activity 3: Science Lab Mentor -->
+        <div class="activity-card">
+          <span class="activity-tag">Mentorship & Outreach</span>
+          <h3 class="activity-title">Mentor & Speaker @ Science Lab's Programs</h3>
+          <p class="activity-desc">
+            ELECTRAHACK 2023, SIP 2024, ICOHACK 2024, SOFTHACK 2025, and AIHACK 2026. Narrowing the STEM gap for 150+ students in Dak Lak.
+          </p>
+          <div class="activity-actions">
+            <a href="https://www.facebook.com/sciencelab.stem" target="_blank" rel="noopener noreferrer" class="act-btn neutral">
+              <span>🔗</span> Science Lab Organization ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Activity 4: VSSS'13 -->
+        <div class="activity-card">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <span class="activity-tag">Scientific Training</span>
+              <h3 class="activity-title" style="margin-top: 0.2rem;">The 13th Vietnam Summer School of Science (VSSS'13) 2026</h3>
+            </div>
+            <span class="pub-venue-badge" style="background: rgba(16, 185, 129, 0.1); color: var(--color-accent-green); border-color: rgba(16, 185, 129, 0.25);">PARTICIPANT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Site Footer
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-name">Thai Bao Huynh (Huỳnh Thái Bảo)</div>
+      <div class="footer-links">
+        <a href="https://github.com/tbaro19/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=JlHZAl4AAAAJ&hl=vi" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://uit.edu.vn/" target="_blank" rel="noopener noreferrer">UIT–VNUHCM</a>
+        <a href="https://nlp.uit.edu.vn/" target="_blank" rel="noopener noreferrer">NLP-UIT Group</a>
+        <a href="https://aisia.vn/" target="_blank" rel="noopener noreferrer">AISIA Lab</a>
+      </div>
+      <div class="footer-copy">
+        © 2026 • AI Research Student @ UIT–VNUHCM • Pure Static Typography
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       Spotify-Style Music Player Widget with Spinning Vinyl Record
+       Track: Badtrip - MCK
+       Vinyl Center Art: page_files/badtrip.png
+       YouTube Link: https://www.youtube.com/watch?v=LPx7ERqFYM0
+       ============================================================ -->
+  <div id="spotifyMusicDock" class="spotify-music-dock" aria-label="Spotify Music Player">
+    <div class="spotify-dock-inner">
+      <!-- Rotating Vinyl Record Disc -->
+      <div class="vinyl-record-wrapper" id="vinylRecordWrapper" title="Click để phát/dừng bài hát">
+        <div class="vinyl-disc" id="vinylDisc">
+          <div class="vinyl-groove-ring"></div>
+          <div class="vinyl-center-art" style="background-image: url('page_files/badtrip.png');">
+            <div class="vinyl-spindle-hole"></div>
+          </div>
+        </div>
+        <div class="vinyl-arm" id="vinylArm"></div>
+      </div>
+
+      <!-- Track Metadata -->
+      <div class="spotify-track-info">
+        <div class="spotify-kicker-row">
+          <div class="spotify-eq-bars" id="spotifyEqBars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+          <span class="spotify-kicker-text font-mono">PLAY THIS SONG FOR BETTER EXPERIENCE</span>
+        </div>
+        <div class="spotify-track-title font-medium" id="spotifyTrackTitle">
+          Badtrip - MCK
+        </div>
+        <div class="spotify-track-artist font-mono text-xs">
+          Vietnamese Hip-Hop & Melodic Trap · Nghiện Nhạc
+        </div>
+      </div>
+
+      <!-- Playback Controls -->
+      <div class="spotify-controls">
+        <button type="button" id="spotifyPlayPauseBtn" class="spotify-play-btn" title="Phát bài hát">
+          <span id="spotifyPlayBtnIcon" class="spotify-play-icon">▶</span>
+        </button>
+
+        <div class="spotify-scrubber-group">
+          <span class="spotify-time-text font-mono" id="spotifyCurrentTime">00:00</span>
+          <div class="spotify-progress-track" id="spotifyProgressTrack">
+            <div class="spotify-progress-bar" id="spotifyProgressBar" style="width: 0%;"></div>
+          </div>
+          <span class="spotify-time-text font-mono" id="spotifyTotalTime">03:24</span>
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=LPx7ERqFYM0" target="_blank" rel="noopener noreferrer" class="spotify-yt-badge" title="Mở trên YouTube">
+          <span>YOUTUBE ↗</span>
+        </a>
+
+        <button type="button" id="spotifyMinimizeBtn" class="spotify-min-btn" title="Thu nhỏ / Mở rộng">
+          <span id="spotifyMinIcon">[—]</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Hidden YouTube Audio Player -->
+    <div id="spotifyYoutubeContainer" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; overflow: hidden; bottom: 0;"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
