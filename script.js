@@ -3,15 +3,20 @@
  * Inspired by NLP_UIT Architecture
  * Features:
  * - Dual Light/Dark Theme Switcher with Persistence
- * - Spotify Music Player Widget (Badtrip - MCK) with Rotating Vinyl Disc
+ * - Official YouTube IFrame API for "2h - MCK (ft. Nger)" (mbEZ_9dhM_Y, 02:59)
+ * - Auto-resume & Viewability Protection (Fixes the 5-second pausing issue)
+ * - Rotating Vinyl Record Widget with 2h.png Center Disc
+ * - Mini MV Picture-in-Picture Video Drawer
+ * - Hero 2H MCK Animated Visualizer & Tab Switcher with Audio Sync
  * - Phonemic & Segmentation-Free LM Interactive Visualizer
  * - Bi-directional Scroll-Reveal Animation
- * - BibTeX Citation Toggle & Copy
+ * - BibTeX Citation Toggle & 1-Click Copy
  * - Mobile Navigation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeManager();
+  initHeroVisualizerTabs();
   initSpotifyPlayer();
   initPhonemicVisualizer();
   initBibtexToggles();
@@ -50,32 +55,160 @@ function initThemeManager() {
 }
 
 /* ============================================================
-   2. Spotify Music Player Widget with Spinning Vinyl Record
-   Song: Badtrip - MCK
-   YouTube ID: LPx7ERqFYM0
+   2. Hero Visualizer Tab Switcher & 2H Sync
    ============================================================ */
+function initHeroVisualizerTabs() {
+  const tabBtn2h = document.getElementById('tabBtn2h');
+  const tabBtnNlp = document.getElementById('tabBtnNlp');
+  const card2h = document.getElementById('hero2hCard');
+  const cardNlp = document.getElementById('phonemicLabCard');
+  const statusLabel = document.getElementById('heroTabStatusLabel');
+
+  if (tabBtn2h && tabBtnNlp && card2h && cardNlp) {
+    tabBtn2h.addEventListener('click', () => {
+      tabBtn2h.classList.add('active');
+      tabBtnNlp.classList.remove('active');
+      card2h.style.display = 'flex';
+      cardNlp.style.display = 'none';
+      if (statusLabel) statusLabel.textContent = 'AESTHETIC VIBE';
+    });
+
+    tabBtnNlp.addEventListener('click', () => {
+      tabBtnNlp.classList.add('active');
+      tabBtn2h.classList.remove('active');
+      card2h.style.display = 'none';
+      cardNlp.style.display = 'block';
+      if (statusLabel) statusLabel.textContent = 'RESEARCH LAB';
+    });
+  }
+
+  // Hero Card Quick Play/Sync Button
+  const heroSyncBtn = document.getElementById('hero2hSyncBtn');
+  if (heroSyncBtn) {
+    heroSyncBtn.addEventListener('click', () => {
+      if (window.toggleSpotifyPlayback) {
+        window.toggleSpotifyPlayback();
+      }
+    });
+  }
+}
+
+/* ============================================================
+   3. Spotify Music Player Widget with Official YouTube IFrame API
+   Song: 2h - MCK (ft. Nger)
+   YouTube ID: mbEZ_9dhM_Y
+   Duration: 179s (02:59)
+   ============================================================ */
+let ytPlayer = null;
+let ytApiReady = false;
+let pendingPlayRequest = false;
+
+window.onYouTubeIframeAPIReady = function() {
+  ytApiReady = true;
+  initYouTubePlayerInstance();
+};
+
+function initYouTubePlayerInstance() {
+  const container = document.getElementById('spotifyYtPlayer');
+  if (!container || ytPlayer) return;
+
+  try {
+    ytPlayer = new YT.Player('spotifyYtPlayer', {
+      height: '100%',
+      width: '100%',
+      videoId: 'mbEZ_9dhM_Y',
+      playerVars: {
+        autoplay: 0,
+        controls: 1,
+        disablekb: 0,
+        enablejsapi: 1,
+        fs: 0,
+        loop: 1,
+        modestbranding: 1,
+        playlist: 'mbEZ_9dhM_Y',
+        playsinline: 1,
+        rel: 0
+      },
+      events: {
+        onReady: (event) => {
+          if (pendingPlayRequest) {
+            pendingPlayRequest = false;
+            event.target.playVideo();
+          }
+        },
+        onStateChange: onYouTubeStateChange,
+        onError: (err) => {
+          console.warn('YouTube Player notice:', err);
+        }
+      }
+    });
+  } catch (e) {
+    console.warn('Failed to construct YT.Player:', e);
+  }
+}
+
+let userWantsPlaying = false;
+
+function onYouTubeStateChange(event) {
+  const dock = document.getElementById('spotifyMusicDock');
+  const playBtnIcon = document.getElementById('spotifyPlayBtnIcon');
+  const heroSyncIcon = document.getElementById('hero2hSyncIcon');
+  const heroSyncBtn = document.getElementById('hero2hSyncBtn');
+
+  if (event.data === YT.PlayerState.PLAYING) {
+    userWantsPlaying = true;
+    if (dock) dock.classList.add('is-playing');
+    if (playBtnIcon) playBtnIcon.textContent = '❚❚';
+    if (heroSyncIcon) heroSyncIcon.textContent = '❚❚';
+    if (heroSyncBtn) {
+      heroSyncBtn.innerHTML = '<span>❚❚</span> ĐANG PHÁT';
+      heroSyncBtn.style.background = '#be123c';
+    }
+  } else if (event.data === YT.PlayerState.PAUSED) {
+    // If YouTube paused unexpectedly (e.g. background viewability check after 5s) while user wants play, auto-resume!
+    if (userWantsPlaying) {
+      setTimeout(() => {
+        if (userWantsPlaying && ytPlayer && typeof ytPlayer.playVideo === 'function') {
+          ytPlayer.playVideo();
+        }
+      }, 250);
+    } else {
+      if (dock) dock.classList.remove('is-playing');
+      if (playBtnIcon) playBtnIcon.textContent = '▶';
+      if (heroSyncIcon) heroSyncIcon.textContent = '▶';
+      if (heroSyncBtn) {
+        heroSyncBtn.innerHTML = '<span>▶</span> BẬT NHẠC';
+        heroSyncBtn.style.background = '#e11d48';
+      }
+    }
+  } else if (event.data === YT.PlayerState.ENDED) {
+    // Loop track seamlessly
+    if (ytPlayer && typeof ytPlayer.seekTo === 'function') {
+      ytPlayer.seekTo(0);
+      ytPlayer.playVideo();
+    }
+  }
+}
+
 function initSpotifyPlayer() {
   const dock = document.getElementById('spotifyMusicDock');
   if (!dock) return;
 
   const playPauseBtn = document.getElementById('spotifyPlayPauseBtn');
-  const playBtnIcon = document.getElementById('spotifyPlayBtnIcon');
   const vinylWrapper = document.getElementById('vinylRecordWrapper');
   const minimizeBtn = document.getElementById('spotifyMinimizeBtn');
   const minIcon = document.getElementById('spotifyMinIcon');
   const progressTrack = document.getElementById('spotifyProgressTrack');
   const progressBar = document.getElementById('spotifyProgressBar');
   const currentTimeEl = document.getElementById('spotifyCurrentTime');
-  const ytContainer = document.getElementById('spotifyYoutubeContainer');
+  const mvToggleBtn = document.getElementById('spotifyMvToggleBtn');
+  const videoDrawer = document.getElementById('spotifyVideoDrawer');
+  const videoCloseBtn = document.getElementById('spotifyVideoCloseBtn');
 
-  const TRACK_TOTAL_SECONDS = 204; // 03:24 for Badtrip - MCK
-  const YT_VIDEO_ID = 'LPx7ERqFYM0';
+  const TRACK_TOTAL_SECONDS = 179; // 02:59 for 2h - MCK
 
-  let isPlaying = false;
   let isMinimized = false;
-  let currentSeconds = 0;
-  let tickerInterval = null;
-  let ytIframe = null;
+  let syncTimer = null;
 
   function formatTime(sec) {
     const m = Math.floor(sec / 60);
@@ -83,85 +216,77 @@ function initSpotifyPlayer() {
     return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
   }
 
-  function createOrGetIframe() {
-    if (!ytIframe && ytContainer) {
-      ytIframe = document.createElement('iframe');
-      ytIframe.id = 'spotifyYtIframe';
-      ytIframe.src = `https://www.youtube.com/embed/${YT_VIDEO_ID}?enablejsapi=1&autoplay=1&origin=${encodeURIComponent(window.location.origin)}`;
-      ytIframe.allow = 'autoplay; encrypted-media';
-      ytIframe.style.width = '200px';
-      ytIframe.style.height = '200px';
-      ytContainer.appendChild(ytIframe);
-    }
-    return ytIframe;
-  }
-
-  function sendYtCommand(func, args) {
-    if (!ytIframe || !ytIframe.contentWindow) return;
-    try {
-      const payload = JSON.stringify({
-        event: 'command',
-        func: func,
-        args: args || []
-      });
-      ytIframe.contentWindow.postMessage(payload, '*');
-    } catch (e) {
-      console.warn('YT postMessage warning:', e);
-    }
-  }
-
-  function setPlaybackState(play) {
-    isPlaying = play;
-    dock.classList.toggle('is-playing', isPlaying);
-
-    if (playBtnIcon) {
-      playBtnIcon.textContent = isPlaying ? '❚❚' : '▶';
-    }
-
-    if (isPlaying) {
-      createOrGetIframe();
-      sendYtCommand('playVideo');
-
-      if (!tickerInterval) {
-        tickerInterval = setInterval(() => {
-          currentSeconds++;
-          if (currentSeconds >= TRACK_TOTAL_SECONDS) {
-            currentSeconds = 0;
+  function startSyncTicker() {
+    if (!syncTimer) {
+      syncTimer = setInterval(() => {
+        if (ytPlayer && typeof ytPlayer.getCurrentTime === 'function' && userWantsPlaying) {
+          const curTime = ytPlayer.getCurrentTime();
+          if (curTime !== undefined && !isNaN(curTime)) {
+            updateProgress(curTime);
           }
-          updateProgressUI();
-        }, 1000);
-      }
-    } else {
-      sendYtCommand('pauseVideo');
-      if (tickerInterval) {
-        clearInterval(tickerInterval);
-        tickerInterval = null;
-      }
+        }
+      }, 500);
     }
   }
 
-  function updateProgressUI() {
+  function stopSyncTicker() {
+    if (syncTimer) {
+      clearInterval(syncTimer);
+      syncTimer = null;
+    }
+  }
+
+  function updateProgress(seconds) {
     if (currentTimeEl) {
-      currentTimeEl.textContent = formatTime(currentSeconds);
+      currentTimeEl.textContent = formatTime(seconds);
     }
     if (progressBar) {
-      const pct = Math.min(100, Math.max(0, (currentSeconds / TRACK_TOTAL_SECONDS) * 100));
+      const pct = Math.min(100, Math.max(0, (seconds / TRACK_TOTAL_SECONDS) * 100));
       progressBar.style.width = `${pct}%`;
     }
   }
 
-  // Toggle Play/Pause on Button click
+  function togglePlayback() {
+    userWantsPlaying = !userWantsPlaying;
+
+    if (!ytPlayer) {
+      if (ytApiReady) {
+        initYouTubePlayerInstance();
+        pendingPlayRequest = userWantsPlaying;
+      } else {
+        pendingPlayRequest = userWantsPlaying;
+      }
+      return;
+    }
+
+    if (userWantsPlaying) {
+      if (typeof ytPlayer.playVideo === 'function') {
+        ytPlayer.playVideo();
+      }
+      startSyncTicker();
+    } else {
+      if (typeof ytPlayer.pauseVideo === 'function') {
+        ytPlayer.pauseVideo();
+      }
+      stopSyncTicker();
+    }
+  }
+
+  // Expose global hook for the hero sync button
+  window.toggleSpotifyPlayback = togglePlayback;
+
+  // Toggle on Play/Pause button
   if (playPauseBtn) {
     playPauseBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      setPlaybackState(!isPlaying);
+      togglePlayback();
     });
   }
 
-  // Toggle Play/Pause on Vinyl Disc click
+  // Toggle on Vinyl Disc click
   if (vinylWrapper) {
     vinylWrapper.addEventListener('click', () => {
-      setPlaybackState(!isPlaying);
+      togglePlayback();
     });
   }
 
@@ -171,11 +296,36 @@ function initSpotifyPlayer() {
       const rect = progressTrack.getBoundingClientRect();
       const clickX = e.clientX - rect.left;
       const pct = Math.max(0, Math.min(1, clickX / rect.width));
-      currentSeconds = Math.floor(pct * TRACK_TOTAL_SECONDS);
-      updateProgressUI();
-      sendYtCommand('seekTo', [currentSeconds, true]);
-      if (!isPlaying) {
-        setPlaybackState(true);
+      const targetSec = Math.floor(pct * TRACK_TOTAL_SECONDS);
+      
+      updateProgress(targetSec);
+      if (ytPlayer && typeof ytPlayer.seekTo === 'function') {
+        ytPlayer.seekTo(targetSec, true);
+      }
+
+      if (!userWantsPlaying) {
+        togglePlayback();
+      }
+    });
+  }
+
+  // Mini MV Picture-in-Picture Drawer Toggle
+  if (mvToggleBtn && videoDrawer) {
+    mvToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = videoDrawer.classList.toggle('is-open');
+      mvToggleBtn.style.color = isOpen ? '#ffffff' : '#fb7185';
+      mvToggleBtn.style.background = isOpen ? '#e11d48' : 'rgba(225, 29, 72, 0.14)';
+    });
+  }
+
+  if (videoCloseBtn && videoDrawer) {
+    videoCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      videoDrawer.classList.remove('is-open');
+      if (mvToggleBtn) {
+        mvToggleBtn.style.color = '#fb7185';
+        mvToggleBtn.style.background = 'rgba(225, 29, 72, 0.14)';
       }
     });
   }
@@ -194,9 +344,7 @@ function initSpotifyPlayer() {
 }
 
 /* ============================================================
-   3. Phonemic & Segmentation-Free LM Interactive Visualizer
-   Demonstrating Thai Bao's Core Research Focus:
-   IPA Triplet Representation & Token-Free Dynamics
+   4. Phonemic & Segmentation-Free LM Interactive Visualizer
    ============================================================ */
 function initPhonemicVisualizer() {
   const sampleBtn = document.getElementById('vnTokenSampleBtn');
@@ -307,7 +455,7 @@ function initPhonemicVisualizer() {
 }
 
 /* ============================================================
-   4. BibTeX Citation Toggle & Copy
+   5. BibTeX Citation Toggle & Copy
    ============================================================ */
 function initBibtexToggles() {
   document.querySelectorAll('.pub-bibtex-btn').forEach(btn => {
@@ -342,7 +490,7 @@ function initBibtexToggles() {
 }
 
 /* ============================================================
-   5. Bi-directional Scroll-Reveal Observer
+   6. Bi-directional Scroll-Reveal Observer
    (Cuộn tới đâu bay ra tới đó - Kể cả khi cuộn ngược lại)
    ============================================================ */
 function initScrollReveal() {
@@ -378,7 +526,7 @@ function initScrollReveal() {
 }
 
 /* ============================================================
-   6. Mobile Navigation Toggle
+   7. Mobile Navigation Toggle
    ============================================================ */
 function initMobileNav() {
   const menuBtn = document.getElementById('mobileMenuBtn');

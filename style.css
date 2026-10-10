@@ -35,6 +35,8 @@
   /* Chromatic Accent System */
   --color-accent-purple: #7a3dff;
   --color-accent-pink: #ec4899;
+  --color-accent-crimson: #e11d48;
+  --color-accent-ruby: #be123c;
   --color-accent-blue: #3b82f6;
   --color-accent-cyan: #06b6d4;
   --color-accent-orange: #f97316;
@@ -44,9 +46,9 @@
   /* Aurora glow */
   --aurora-gradient: radial-gradient(
     ellipse at 50% 0%,
-    rgba(122, 61, 255, 0.12) 0%,
-    rgba(59, 130, 246, 0.08) 35%,
-    rgba(6, 182, 212, 0.04) 65%,
+    rgba(225, 29, 72, 0.12) 0%,
+    rgba(122, 61, 255, 0.09) 35%,
+    rgba(59, 130, 246, 0.05) 65%,
     transparent 80%
   );
 
@@ -103,9 +105,9 @@
 
   --aurora-gradient: radial-gradient(
     ellipse at 50% 0%,
-    rgba(122, 61, 255, 0.22) 0%,
-    rgba(59, 130, 246, 0.15) 35%,
-    rgba(6, 182, 212, 0.08) 65%,
+    rgba(225, 29, 72, 0.24) 0%,
+    rgba(122, 61, 255, 0.16) 35%,
+    rgba(6, 182, 212, 0.06) 65%,
     transparent 80%
   );
 
@@ -582,12 +584,199 @@ button {
 }
 
 /* ============================================================
-   Interactive Research Stage Panel (Right Hero Column)
-   Phonemic & Segmentation-Free LM Lab Interactive Widget
+   Hero Right Column: 2H - MCK Visualizer & Research Stage
    ============================================================ */
 .hero-interactive-panel {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-panel-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-md);
+}
+
+.tab-btn-group {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.hero-tab-btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--color-steel);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.hero-tab-btn:hover {
+  color: var(--color-ink);
+}
+
+.hero-tab-btn.active {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  border-color: var(--color-hairline);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-tab-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-accent-crimson);
+}
+
+/* 2H - MCK Animated Visual Card */
+.hero-2h-card {
+  position: relative;
+  background: #09090b;
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), 0 0 28px rgba(225, 29, 72, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--trans-base), box-shadow var(--trans-base);
+}
+
+.hero-2h-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 36px rgba(225, 29, 72, 0.22);
+}
+
+.hero-2h-video-wrap {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #000000;
+}
+
+@media (min-width: 640px) {
+  .hero-2h-video-wrap {
+    height: 270px;
+  }
+}
+
+.hero-2h-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-2h-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.05) 50%, rgba(9,9,11,0.92) 100%);
+  pointer-events: none;
+}
+
+.hero-2h-top-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(225, 29, 72, 0.45);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fb7185;
+}
+
+.hero-2h-pa-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+}
+
+.hero-2h-info-bar {
+  padding: 1.15rem 1.35rem;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hero-2h-track-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero-2h-song-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-2h-artist-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-steel);
+}
+
+.hero-2h-sync-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: #e11d48;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);
+  transition: all var(--trans-fast);
+  white-space: nowrap;
+}
+
+.hero-2h-sync-btn:hover {
+  background: #f43f5e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.5);
 }
 
 .research-lab-card {
@@ -1657,6 +1846,81 @@ button {
 .spotify-yt-badge:hover {
   background: rgba(239, 68, 68, 0.25);
   color: #f87171;
+}
+
+.spotify-mv-btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fb7185;
+  background: rgba(225, 29, 72, 0.14);
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.spotify-mv-btn:hover {
+  background: rgba(225, 29, 72, 0.3);
+  color: #ffffff;
+}
+
+.spotify-video-drawer {
+  position: fixed;
+  bottom: 84px;
+  right: calc(50% - 410px + 20px);
+  width: 290px;
+  height: 165px;
+  background: #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(225, 29, 72, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(225, 29, 72, 0.25);
+  z-index: 999995;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .spotify-video-drawer {
+    right: 1.5rem;
+    left: auto;
+  }
+}
+
+.spotify-video-drawer.is-open {
+  display: block;
+  animation: popVideo 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popVideo {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.spotify-yt-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.spotify-video-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .spotify-min-btn {

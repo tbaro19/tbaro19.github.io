@@ -120,9 +120,53 @@
           </div>
         </div>
 
-        <!-- Right: Interactive Phonemic & Tokenizer Visualizer -->
+        <!-- Right: 2H - MCK Visualizer & NLP Research Stage -->
         <div class="hero-interactive-panel">
-          <div class="research-lab-card" id="phonemicLabCard">
+          <!-- Tab Navigation -->
+          <div class="hero-panel-tabs">
+            <div class="tab-btn-group">
+              <button type="button" class="hero-tab-btn active" id="tabBtn2h" data-target="hero2hCard">[2H VISUALIZER]</button>
+              <button type="button" class="hero-tab-btn" id="tabBtnNlp" data-target="phonemicLabCard">[NLP LAB]</button>
+            </div>
+            <div class="hero-tab-status">
+              <span class="dot-indicator pulse" style="background: #e11d48;"></span>
+              <span id="heroTabStatusLabel">AESTHETIC VIBE</span>
+            </div>
+          </div>
+
+          <!-- 1. 2H - MCK Animated Visual Card -->
+          <div class="hero-2h-card" id="hero2hCard">
+            <div class="hero-2h-video-wrap">
+              <video class="hero-2h-video" autoplay loop muted playsinline poster="page_files/2h.png">
+                <source src="page_files/2h_video.mp4" type="video/mp4">
+                <img src="page_files/2h_animated.webp" alt="2h MCK Visualizer" style="width:100%; height:100%; object-fit:cover;">
+              </video>
+              <div class="hero-2h-overlay"></div>
+              <div class="hero-2h-top-badge font-mono">
+                <span class="dot-indicator pulse" style="background: #e11d48;"></span>
+                <span>NOW VIBING: 2H · MCK</span>
+              </div>
+              <div class="hero-2h-pa-badge font-mono">
+                PARENTAL ADVISORY
+              </div>
+            </div>
+
+            <div class="hero-2h-info-bar">
+              <div class="hero-2h-track-details">
+                <div class="hero-2h-song-name font-display">
+                  <span>2h - MCK</span>
+                  <span style="font-size: 0.72rem; color: #fb7185; font-family: var(--font-mono); font-weight: 700;">[02:59]</span>
+                </div>
+                <div class="hero-2h-artist-tag">MCK (ft. Nger) · Melodic Trap Atmosphere</div>
+              </div>
+              <button type="button" class="hero-2h-sync-btn" id="hero2hSyncBtn" title="Phát bài hát 2h - MCK">
+                <span id="hero2hSyncIcon">▶</span> BẬT NHẠC
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Interactive Phonemic & Tokenizer Visualizer -->
+          <div class="research-lab-card" id="phonemicLabCard" style="display: none;">
             <div class="lab-card-header">
               <div class="lab-card-title">
                 <span class="dot-indicator pulse"></span>
@@ -745,17 +789,25 @@
 
   <!-- ============================================================
        Spotify-Style Music Player Widget with Spinning Vinyl Record
-       Track: Badtrip - MCK
-       Vinyl Center Art: page_files/badtrip.png
-       YouTube Link: https://www.youtube.com/watch?v=LPx7ERqFYM0
+       Track: 2h - MCK (ft. Nger)
+       Vinyl Center Art: page_files/2h.png
+       YouTube Link: https://www.youtube.com/watch?v=mbEZ_9dhM_Y
        ============================================================ -->
+  <!-- Floating Mini MV Video Window (Toggleable via [MV 📺]) -->
+  <div id="spotifyVideoDrawer" class="spotify-video-drawer" aria-label="Mini MV Player">
+    <button type="button" id="spotifyVideoCloseBtn" class="spotify-video-close" title="Đóng cửa sổ MV">✕</button>
+    <div class="spotify-yt-wrapper">
+      <div id="spotifyYtPlayer"></div>
+    </div>
+  </div>
+
   <div id="spotifyMusicDock" class="spotify-music-dock" aria-label="Spotify Music Player">
     <div class="spotify-dock-inner">
       <!-- Rotating Vinyl Record Disc -->
       <div class="vinyl-record-wrapper" id="vinylRecordWrapper" title="Click để phát/dừng bài hát">
         <div class="vinyl-disc" id="vinylDisc">
           <div class="vinyl-groove-ring"></div>
-          <div class="vinyl-center-art" style="background-image: url('page_files/badtrip.png');">
+          <div class="vinyl-center-art" style="background-image: url('page_files/2h.png');">
             <div class="vinyl-spindle-hole"></div>
           </div>
         </div>
@@ -771,31 +823,35 @@
             <span class="eq-bar"></span>
             <span class="eq-bar"></span>
           </div>
-          <span class="spotify-kicker-text font-mono">PLAY THIS SONG FOR BETTER EXPERIENCE</span>
+          <span class="spotify-kicker-text font-mono" style="color: #fb7185;">PLAY THIS SONG FOR BETTER EXPERIENCE</span>
         </div>
         <div class="spotify-track-title font-medium" id="spotifyTrackTitle">
-          Badtrip - MCK
+          2h - MCK
         </div>
         <div class="spotify-track-artist font-mono text-xs">
-          Vietnamese Hip-Hop & Melodic Trap · Nghiện Nhạc
+          MCK (ft. Nger) · Melodic Trap Atmosphere
         </div>
       </div>
 
       <!-- Playback Controls -->
       <div class="spotify-controls">
-        <button type="button" id="spotifyPlayPauseBtn" class="spotify-play-btn" title="Phát bài hát">
+        <button type="button" id="spotifyPlayPauseBtn" class="spotify-play-btn" style="background-color: #e11d48; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.45); color: #ffffff;" title="Phát bài hát">
           <span id="spotifyPlayBtnIcon" class="spotify-play-icon">▶</span>
         </button>
 
         <div class="spotify-scrubber-group">
           <span class="spotify-time-text font-mono" id="spotifyCurrentTime">00:00</span>
           <div class="spotify-progress-track" id="spotifyProgressTrack">
-            <div class="spotify-progress-bar" id="spotifyProgressBar" style="width: 0%;"></div>
+            <div class="spotify-progress-bar" id="spotifyProgressBar" style="width: 0%; background-color: #e11d48;"></div>
           </div>
-          <span class="spotify-time-text font-mono" id="spotifyTotalTime">03:24</span>
+          <span class="spotify-time-text font-mono" id="spotifyTotalTime">02:59</span>
         </div>
 
-        <a href="https://www.youtube.com/watch?v=LPx7ERqFYM0" target="_blank" rel="noopener noreferrer" class="spotify-yt-badge" title="Mở trên YouTube">
+        <button type="button" id="spotifyMvToggleBtn" class="spotify-mv-btn" title="Xem màn hình video MV">
+          <span>MV 📺</span>
+        </button>
+
+        <a href="https://www.youtube.com/watch?v=mbEZ_9dhM_Y" target="_blank" rel="noopener noreferrer" class="spotify-yt-badge" title="Mở trên YouTube">
           <span>YOUTUBE ↗</span>
         </a>
 
@@ -804,11 +860,10 @@
         </button>
       </div>
     </div>
-
-    <!-- Hidden YouTube Audio Player -->
-    <div id="spotifyYoutubeContainer" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; overflow: hidden; bottom: 0;"></div>
   </div>
 
+  <!-- YouTube Official IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
   <!-- Scripts -->
   <script src="script.js"></script>
 </body>
