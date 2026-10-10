@@ -779,6 +779,25 @@ button {
   box-shadow: 0 6px 18px rgba(225, 29, 72, 0.5);
 }
 
+@media (max-width: 640px) {
+  .hero-2h-video-wrap {
+    height: 195px;
+  }
+
+  .hero-2h-info-bar {
+    padding: 0.85rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .hero-2h-sync-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem 1rem;
+  }
+}
+
 .research-lab-card {
   background: var(--color-surface);
   border: 1px solid var(--color-hairline);
@@ -1944,6 +1963,7 @@ button {
 .spotify-music-dock.is-minimized .spotify-track-info,
 .spotify-music-dock.is-minimized .spotify-scrubber-group,
 .spotify-music-dock.is-minimized .spotify-yt-badge,
+.spotify-music-dock.is-minimized .spotify-mv-btn,
 .spotify-music-dock.is-minimized .spotify-play-btn {
   display: none;
 }
@@ -1961,6 +1981,164 @@ button {
   justify-content: center;
   font-size: 0.6rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   Spotify Music Dock — Mobile Responsive Refinement
+   Fixes layout breaking and oversized scale on phone screens
+   ============================================================ */
+@media (max-width: 680px) {
+  .spotify-music-dock {
+    width: calc(100% - 1.25rem);
+    max-width: 480px;
+    bottom: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+  }
+
+  .spotify-dock-inner {
+    gap: 0.65rem;
+  }
+
+  /* Compact Vinyl Record */
+  .vinyl-record-wrapper {
+    width: 38px;
+    height: 38px;
+  }
+
+  .vinyl-disc {
+    width: 38px;
+    height: 38px;
+  }
+
+  .vinyl-center-art {
+    width: 20px;
+    height: 20px;
+  }
+
+  .vinyl-spindle-hole {
+    width: 4px;
+    height: 4px;
+  }
+
+  .vinyl-arm {
+    width: 10px;
+    height: 18px;
+    top: -3px;
+    right: -1px;
+  }
+
+  /* Compact Track Info */
+  .spotify-track-info {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .spotify-kicker-row {
+    margin-bottom: 0;
+    gap: 0.35rem;
+  }
+
+  .spotify-kicker-text {
+    display: none; /* Hide long kicker text on mobile to avoid stretching layout */
+  }
+
+  .spotify-track-title {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    max-width: 125px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .spotify-track-artist {
+    font-size: 0.64rem;
+    line-height: 1.2;
+    max-width: 125px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Controls */
+  .spotify-controls {
+    gap: 0.4rem;
+  }
+
+  .spotify-play-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4);
+  }
+
+  .spotify-mv-btn {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.65rem;
+  }
+
+  .spotify-yt-badge {
+    display: none; /* Hide external YT link on mobile since user has MV button and play button */
+  }
+
+  .spotify-min-btn {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.25rem;
+  }
+
+  /* Minimized state on mobile */
+  .spotify-music-dock.is-minimized {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  /* Video Drawer on Mobile */
+  .spotify-video-drawer {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: calc(100% - 1.5rem);
+    max-width: 320px;
+    height: 180px;
+    bottom: 64px;
+  }
+}
+
+/* Extra small mobile screens (e.g. 320px - 380px) */
+@media (max-width: 380px) {
+  .spotify-music-dock {
+    width: calc(100% - 0.75rem);
+    padding: 0.3rem 0.55rem;
+  }
+
+  .spotify-dock-inner {
+    gap: 0.45rem;
+  }
+
+  .spotify-track-title {
+    max-width: 90px;
+    font-size: 0.75rem;
+  }
+
+  .spotify-track-artist {
+    display: none; /* Hide artist on ultra small screen to keep title and buttons intact */
+  }
+
+  .spotify-controls {
+    gap: 0.3rem;
+  }
+
+  .spotify-play-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.68rem;
+  }
+
+  .spotify-mv-btn {
+    padding: 0.15rem 0.35rem;
+    font-size: 0.6rem;
+  }
 }
 
 /* ============================================================
